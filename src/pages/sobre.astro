@@ -1,0 +1,21 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import AboutHero from '../components/about/AboutHero.astro';
+import Beliefs from '../components/about/Beliefs.astro';
+import PastorsWelcome from '../components/about/PastorsWelcome.astro';
+---
+
+<Layout
+	title="Sobre Nós | Igreja Morada"
+	description="Conheça a missão, as crenças e o coração da Igreja Morada — uma comunidade de fé que ama a Deus e as pessoas."
+>
+	<Header active="sobre" />
+	<main class="flex-grow overflow-x-hidden">
+		<AboutHero />
+		<Beliefs />
+		<PastorsWelcome />
+	</main>
+	<Footer />
+</Layout>

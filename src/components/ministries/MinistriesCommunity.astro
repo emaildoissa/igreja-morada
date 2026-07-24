@@ -1,0 +1,58 @@
+---
+const communityImage =
+	'https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=1200&q=80';
+---
+
+<section class="bg-surface px-gutter py-section-padding-v-mobile md:py-section-padding-v">
+	<div class="mx-auto grid max-w-container-max grid-cols-1 items-center gap-stack-lg lg:grid-cols-12">
+		<div class="order-2 flex flex-col gap-stack-md lg:order-1 lg:col-span-5">
+			<span class="font-body text-sm font-bold uppercase tracking-[0.1em] text-primary">
+				Impacto na Comunidade
+			</span>
+			<h2 class="font-display text-[32px] leading-10 text-on-surface">
+				Construindo vidas melhores juntos
+			</h2>
+			<div class="flex flex-col gap-4 font-body text-base leading-6 text-text-muted">
+				<p>
+					Queremos alcançar pessoas que enfrentam opressão, solidão, vícios ou dificuldades
+					sistêmicas. Trabalhamos para ajudar cada um a reconstruir a vida com dignidade, fé e
+					apoio real.
+				</p>
+				<p>
+					Seja um piquenique em família ou um programa de ação social, acreditamos que a mudança
+					profunda acontece quando as pessoas se reúnem com propósito e amor incondicional.
+				</p>
+			</div>
+			<div class="mt-stack-sm flex flex-wrap gap-stack-md">
+				<a
+					href="/contato"
+					class="inline-flex items-center justify-center rounded bg-primary-container px-6 py-3 font-body text-base font-semibold text-white shadow-sm transition-colors hover:bg-primary hover:shadow-md"
+				>
+					Participar de um grupo
+				</a>
+				<a
+					href="/contato"
+					class="inline-flex items-center justify-center rounded border-2 border-on-secondary-fixed bg-transparent px-6 py-3 font-body text-base font-semibold text-on-secondary-fixed transition-colors hover:bg-surface-container-low"
+				>
+					Ser voluntário
+				</a>
+			</div>
+		</div>
+
+		<div class="relative order-1 lg:order-2 lg:col-span-7">
+			<div class="relative aspect-[4/3] w-full overflow-hidden rounded-xl shadow-[0_8px_40px_rgba(0,0,0,0.08)]">
+				<img
+					src={communityImage}
+					alt="Pessoas servindo juntas em ação comunitária"
+					class="h-full w-full object-cover"
+					loading="lazy"
+				/>
+			</div>
+			<div
+				class="absolute -bottom-6 -left-6 -z-10 h-24 w-24 rounded-full bg-primary-fixed-dim opacity-50 blur-2xl"
+				aria-hidden="true"
+			>
+			</div>
+		</div>
+	</div>
+</section>

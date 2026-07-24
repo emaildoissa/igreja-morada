@@ -1,0 +1,25 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ContactIntro from '../components/contact/ContactIntro.astro';
+import ContactForm from '../components/contact/ContactForm.astro';
+import ContactSidebar from '../components/contact/ContactSidebar.astro';
+---
+
+<Layout
+	title="Contato | Igreja Morada"
+	description="Fale com a Igreja Morada. Envie uma mensagem, peça oração ou tire dúvidas sobre nossos cultos e ministérios."
+>
+	<Header active="contato" />
+	<main class="flex-grow">
+		<ContactIntro />
+		<section class="mx-auto max-w-container-max px-gutter pb-section-padding-v">
+			<div class="grid grid-cols-1 gap-gutter md:grid-cols-12">
+				<ContactForm />
+				<ContactSidebar />
+			</div>
+		</section>
+	</main>
+	<Footer />
+</Layout>

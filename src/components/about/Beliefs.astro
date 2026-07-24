@@ -1,0 +1,77 @@
+---
+const beliefs = [
+	{
+		title: 'Jesus é Senhor',
+		description:
+			'Confessamos Jesus Cristo como Senhor e Salvador — o centro da nossa fé, adoração e vida em comunidade.',
+		image:
+			'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80',
+		alt: 'Pessoas em adoração durante o culto',
+	},
+	{
+		title: 'Deus é Amor',
+		description:
+			'Cremos que o amor de Deus transforma vidas e nos chama a acolher, servir e caminhar juntos com graça.',
+		image:
+			'https://images.unsplash.com/photo-1504052434569-70ad5836ab65?auto=format&fit=crop&w=800&q=80',
+		alt: 'Bíblia aberta em momento de devoção',
+	},
+	{
+		title: 'O Espírito Capacita',
+		description:
+			'O Espírito Santo nos guia, consola e capacita para viver o evangelho com coragem, união e propósito.',
+		image:
+			'https://images.unsplash.com/photo-1490730141103-6cac27aaab94?auto=format&fit=crop&w=800&q=80',
+		alt: 'Pessoa em momento de oração e contemplação',
+	},
+];
+---
+
+<section class="bg-surface px-gutter py-section-padding-v-mobile md:py-section-padding-v">
+	<div class="mx-auto flex max-w-container-max flex-col gap-stack-lg">
+		<div class="mx-auto mb-stack-lg max-w-2xl text-center">
+			<span class="mb-2 block font-body text-sm font-bold uppercase tracking-[0.1em] text-primary">
+				Tudo Sobre Jesus
+			</span>
+			<h2 class="mb-4 font-display text-[32px] leading-10 text-on-background">
+				No que Cremos
+			</h2>
+			<p class="font-body text-base leading-6 text-text-muted">
+				Nossa fé é simples e profunda: Jesus no centro, a Palavra como fundamento e o amor como
+				prática diária em comunidade.
+			</p>
+		</div>
+
+		<div class="grid grid-cols-1 gap-gutter md:grid-cols-3">
+			{
+				beliefs.map((belief) => (
+					<article class="flex flex-col overflow-hidden rounded-xl border border-surface-variant bg-surface-container-lowest shadow-sm transition-shadow duration-300 hover:shadow-md">
+						<div class="relative h-48 w-full overflow-hidden bg-surface-container-low">
+							<img
+								src={belief.image}
+								alt={belief.alt}
+								class="h-full w-full object-cover"
+								loading="lazy"
+							/>
+						</div>
+						<div class="flex flex-grow flex-col justify-center p-stack-lg text-center">
+							<h3 class="mb-2 font-body text-base font-semibold leading-6 text-on-background">
+								{belief.title}
+							</h3>
+							<p class="font-body text-base leading-6 text-text-muted">{belief.description}</p>
+						</div>
+					</article>
+				))
+			}
+		</div>
+
+		<div class="mt-stack-md text-center">
+			<a
+				href="/contato"
+				class="inline-flex items-center justify-center rounded bg-primary-container px-8 py-3 font-body text-base font-semibold text-surface-container-lowest transition-colors duration-200 hover:bg-primary"
+			>
+				Saiba Mais Sobre Nossa Fé
+			</a>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,21 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import MinistriesHero from '../components/ministries/MinistriesHero.astro';
+import MinistriesGrid from '../components/ministries/MinistriesGrid.astro';
+import MinistriesCommunity from '../components/ministries/MinistriesCommunity.astro';
+---
+
+<Layout
+	title="Ministérios | Igreja Morada"
+	description="Conheça os ministérios da Igreja Morada: cultos, jovens, crianças, aconselhamento, eventos e ação social. Há um lugar para você servir e crescer."
+>
+	<Header active="ministerios" />
+	<main class="flex-grow overflow-x-hidden">
+		<MinistriesHero />
+		<MinistriesGrid />
+		<MinistriesCommunity />
+	</main>
+	<Footer />
+</Layout>

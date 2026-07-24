@@ -1,0 +1,99 @@
+---
+const year = new Date().getFullYear();
+
+const gatherings = [
+	{ href: '/ministerios', label: 'Todos os Ministérios' },
+	{ href: '/ministerios', label: 'Culto de Domingo' },
+	{ href: '/ministerios', label: 'Ministério de Jovens' },
+];
+
+const usefulLinks = [
+	{ href: '/sobre', label: 'Sobre Nós' },
+	{ href: '/contato', label: 'Contato' },
+	{ href: '/ministerios', label: 'Ministérios' },
+	{ href: '/contato', label: 'Voluntariado' },
+];
+---
+
+<footer class="w-full bg-on-background">
+	<div
+		class="mx-auto grid max-w-container-max grid-cols-1 gap-stack-lg px-gutter py-section-padding-v md:grid-cols-3"
+	>
+		<!-- Brand + contact -->
+		<div class="flex flex-col gap-stack-md">
+			<div class="mb-4 flex items-center gap-3">
+				<img
+					src="/logo.jpg"
+					alt="Logo Igreja Morada"
+					width="40"
+					height="40"
+					class="h-10 w-10 rounded-full object-cover ring-1 ring-white/10"
+				/>
+				<span class="font-display text-[28px] leading-9 text-primary-fixed md:text-[32px] md:leading-10">
+					Morada
+				</span>
+			</div>
+			<p class="font-body text-base leading-6 text-surface-variant opacity-80">
+				Uma igreja onde você encontra lar, fé e propósito.
+			</p>
+			<div class="mt-4 font-body text-base leading-6 text-surface-variant opacity-80">
+				<p>Venha nos visitar</p>
+				<p>Domingos às 9h e 11h</p>
+				<p class="mt-2 font-bold">contato@igrejamorada.org</p>
+			</div>
+		</div>
+
+		<!-- Link columns -->
+		<div class="grid grid-cols-2 gap-gutter">
+			<div class="flex flex-col gap-stack-sm">
+				<h4 class="mb-2 font-body text-base font-semibold leading-6 text-primary-fixed">
+					Encontros
+				</h4>
+				{
+					gatherings.map((link) => (
+						<a
+							href={link.href}
+							class="font-body text-base leading-6 text-surface-variant opacity-80 transition-all hover:text-primary-fixed-dim hover:opacity-100"
+						>
+							{link.label}
+						</a>
+					))
+				}
+			</div>
+			<div class="flex flex-col gap-stack-sm">
+				<h4 class="mb-2 font-body text-base font-semibold leading-6 text-primary-fixed">
+					Links Úteis
+				</h4>
+				{
+					usefulLinks.map((link) => (
+						<a
+							href={link.href}
+							class="font-body text-base leading-6 text-surface-variant opacity-80 transition-all hover:text-primary-fixed-dim hover:opacity-100"
+						>
+							{link.label}
+						</a>
+					))
+				}
+			</div>
+		</div>
+
+		<!-- CTA -->
+		<div class="flex flex-col items-start gap-stack-md text-left md:items-end md:text-right">
+			<h3 class="mb-2 font-display text-[28px] leading-9 text-primary-fixed md:text-[32px] md:leading-10">
+				Veja o que Deus pode fazer através de você.
+			</h3>
+			<a
+				href="/#contribuir"
+				class="mt-2 inline-flex items-center justify-center rounded bg-primary-container px-6 py-3 font-body text-base font-semibold uppercase text-surface-container-lowest transition-colors duration-200 hover:bg-primary"
+			>
+				Contribuir
+			</a>
+		</div>
+	</div>
+
+	<div class="border-t border-surface-variant/20 bg-inverse-surface py-4 text-center">
+		<p class="font-body text-xs leading-4 text-surface-variant opacity-60">
+			© {year} Igreja Morada. Todos os direitos reservados.
+		</p>
+	</div>
+</footer>

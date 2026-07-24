@@ -1,0 +1,64 @@
+---
+const services = [
+	{
+		icon: 'menu_book',
+		title: 'Cultos Semanais',
+		description: 'Encontros de adoração, palavra e comunhão para toda a família.',
+	},
+	{
+		icon: 'groups',
+		title: 'Jovens',
+		description: 'Um espaço seguro para crescer na fé, amizades e propósito.',
+	},
+	{
+		icon: 'child_care',
+		title: 'Crianças',
+		description: 'Ministério infantil com cuidado, brincadeiras e ensino bíblico.',
+	},
+];
+---
+
+<section
+	id="ministerios"
+	class="mx-auto max-w-container-max px-gutter py-section-padding-v-mobile md:py-section-padding-v"
+>
+	<div class="mx-auto mb-16 flex max-w-2xl flex-col items-center gap-2 text-center">
+		<span class="font-body text-sm font-bold uppercase tracking-[0.1em] text-primary">
+			Nossos Ministérios
+		</span>
+		<h2 class="font-display text-[32px] leading-10 text-on-surface">
+			Servindo nossa comunidade com amor
+		</h2>
+		<p class="mt-4 font-body text-base leading-6 text-text-muted">
+			Acreditamos que cada pessoa tem um lugar e um chamado. Conheça alguns dos caminhos pelos
+			quais caminhamos juntos como igreja.
+		</p>
+	</div>
+
+	<div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+		{
+			services.map((service) => (
+				<article class="group flex flex-col items-start gap-4 rounded-xl border border-surface-variant bg-surface-container-lowest p-6 transition-shadow duration-300 hover:shadow-lg">
+					<div class="flex h-12 w-12 items-center justify-center rounded-full bg-secondary-fixed text-on-secondary-fixed transition-colors group-hover:bg-primary-container group-hover:text-white">
+						<span class="material-symbols-outlined">{service.icon}</span>
+					</div>
+					<div>
+						<h3 class="mb-2 font-body text-base font-semibold leading-6 text-on-surface">
+							{service.title}
+						</h3>
+						<p class="font-body text-base leading-6 text-text-muted">{service.description}</p>
+					</div>
+				</article>
+			))
+		}
+	</div>
+
+	<div class="mt-12 text-center">
+		<a
+			href="/ministerios"
+			class="inline-flex items-center justify-center rounded border-2 border-on-secondary-fixed bg-transparent px-8 py-3 font-body text-base font-semibold uppercase text-on-secondary-fixed transition-colors duration-300 hover:bg-on-secondary-fixed hover:text-white"
+		>
+			Ver Todos os Ministérios
+		</a>
+	</div>
+</section>

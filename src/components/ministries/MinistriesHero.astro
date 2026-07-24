@@ -1,0 +1,32 @@
+---
+const heroImage =
+	'https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1920&q=80';
+---
+
+<section
+	class="relative flex h-[60vh] min-h-[500px] w-full items-center justify-center overflow-hidden"
+>
+	<div
+		class="absolute inset-0 bg-cover bg-center"
+		style={`background-image: url('${heroImage}')`}
+		role="img"
+		aria-label="Comunidade reunida em serviço e comunhão"
+	>
+	</div>
+	<div class="absolute inset-0 bg-gradient-to-t from-on-secondary-fixed/90 via-on-secondary-fixed/70 to-on-secondary-fixed/50"></div>
+
+	<div
+		class="relative z-10 mx-auto flex max-w-[800px] flex-col items-center gap-stack-md px-gutter text-center text-surface-container-lowest"
+	>
+		<span class="font-body text-sm font-bold uppercase tracking-[0.1em] text-primary-fixed">
+			Nosso Chamado
+		</span>
+		<h1 class="font-display text-[40px] leading-[48px] md:text-[64px] md:leading-[72px]">
+			Servimos nossa comunidade com amor
+		</h1>
+		<p class="max-w-2xl font-body text-lg leading-7 text-surface-container-lowest/90">
+			Acreditamos que a fé se expressa em ação. Conheça os caminhos pelos quais acolhemos, cuidamos
+			e caminhamos com as pessoas ao nosso redor.
+		</p>
+	</div>
+</section>

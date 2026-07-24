@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Us | Sanctuary Community Church</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&amp;family=Jost:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#c6d7fe",
+                        "secondary-fixed": "#d7e3ff",
+                        "surface-bright": "#f7f9fd",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-tint": "#a23f12",
+                        "tertiary-fixed-dim": "#b4c7ed",
+                        "inverse-primary": "#ffb59a",
+                        "surface-dim": "#d8dade",
+                        "on-secondary-fixed": "#071b38",
+                        "primary-fixed": "#ffdbce",
+                        "on-primary-container": "#641f00",
+                        "surface-container-low": "#f2f4f8",
+                        "primary": "#a23f12",
+                        "surface-white": "#FFFFFF",
+                        "text-muted": "#5C6A7E",
+                        "background": "#f7f9fd",
+                        "tertiary": "#4c5f80",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#344767",
+                        "on-secondary-fixed-variant": "#364766",
+                        "secondary-fixed-dim": "#b5c7ec",
+                        "on-primary-fixed": "#370e00",
+                        "on-background": "#191c1f",
+                        "inverse-on-surface": "#eff1f5",
+                        "on-surface": "#191c1f",
+                        "surface": "#f7f9fd",
+                        "on-secondary-container": "#4d5e7e",
+                        "tertiary-fixed": "#d6e3ff",
+                        "on-tertiary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#e0e2e6",
+                        "on-tertiary-container": "#233756",
+                        "on-tertiary-fixed": "#051b39",
+                        "primary-container": "#f67d4c",
+                        "primary-fixed-dim": "#ffb59a",
+                        "inverse-surface": "#2d3134",
+                        "surface-container-highest": "#e0e2e6",
+                        "outline-variant": "#dec0b6",
+                        "tertiary-container": "#8da0c4",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#802a00",
+                        "on-error-container": "#93000a",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#eceef2",
+                        "on-error": "#ffffff",
+                        "success-green": "#2ECC71",
+                        "on-surface-variant": "#57423b",
+                        "secondary": "#4e5f7f",
+                        "outline": "#8a7269",
+                        "surface-container-high": "#e6e8ec"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-sm": "8px",
+                        "section-padding-v": "80px",
+                        "stack-lg": "32px",
+                        "stack-md": "16px",
+                        "gutter": "24px",
+                        "container-max": "1200px",
+                        "section-padding-v-mobile": "48px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["DM Serif Display"],
+                        "headline-md": ["DM Serif Display"],
+                        "caption": ["Jost"],
+                        "eyebrow-sm": ["Jost"],
+                        "label-bold": ["Jost"],
+                        "display-lg": ["DM Serif Display"],
+                        "body-md": ["Jost"],
+                        "body-lg": ["Jost"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["40px", { "lineHeight": "48px", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "400" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "eyebrow-sm": ["14px", { "lineHeight": "20px", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "label-bold": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+                        "display-lg": ["64px", { "lineHeight": "72px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="bg-surface shadow-sm docked full-width top-0 sticky z-50">
+<div class="flex justify-between items-center px-gutter w-full max-w-container-max mx-auto h-20">
+<div class="flex items-center gap-2">
+<span aria-hidden="true" class="material-symbols-outlined text-primary text-3xl" data-icon="church">church</span>
+<a class="font-headline-md text-headline-md text-primary" href="#">Sanctuary</a>
+</div>
+<nav aria-label="Main Navigation" class="hidden md:flex gap-8 items-center">
+<a class="font-label-bold text-label-bold text-secondary hover:text-primary transition-colors duration-200" href="#">Home</a>
+<a aria-current="page" class="font-label-bold text-label-bold text-primary border-b-2 border-primary pb-1" href="#">About</a>
+<a class="font-label-bold text-label-bold text-secondary hover:text-primary transition-colors duration-200" href="#">Services</a>
+<a class="font-label-bold text-label-bold text-secondary hover:text-primary transition-colors duration-200" href="#">Give</a>
+<a class="font-label-bold text-label-bold text-secondary hover:text-primary transition-colors duration-200" href="#">Contact</a>
+</nav>
+<div class="hidden md:block">
+<a class="inline-flex items-center justify-center px-6 py-3 bg-primary-container text-surface-container-lowest font-label-bold text-label-bold uppercase rounded hover:bg-primary transition-colors duration-200 shadow-sm" href="#">Donate</a>
+</div>
+<button aria-label="Toggle Menu" class="md:hidden text-primary">
+<span class="material-symbols-outlined text-3xl" data-icon="menu">menu</span>
+</button>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative w-full h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A wide shot of a modern, welcoming church interior during a service, soft natural light streaming through large windows, diverse congregation, warm and inviting atmosphere, high quality photography." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBkWhtJzrcO8lJxGOBWMcrwzfRqcHZPb5MTJdPXXOmZ5vvLZYM90eC1bdyBWfGvH5V8zVa_uWp2g8SbO6dBow00mPegyIoRXp-lxCXWe-Pu7WoANElxpqvXeE5LP_E1T0OjDdV13LXQtOwKivfwxqxyAgREEDHngcfhBFb42OsQ8m8BFFRO3pfeo6rYPmh1vwaPDZGZnSec1lXbcp-kp9VDKYPS84mn8ZKTGq9a0G2HBlW2mGgQsj5J5hmJ6v3xUthOnRn-FZugOnek')"></div>
+<div class="absolute inset-0 bg-on-secondary-fixed/80"></div>
+<div class="relative z-10 text-center px-gutter max-w-container-max mx-auto text-surface-container-lowest flex flex-col items-center gap-stack-lg">
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg max-w-3xl">About Our Church</h1>
+<p class="font-body-lg text-body-lg max-w-2xl opacity-90">We are a church that believes in Jesus &amp; loves God and people. Discover our mission, our beliefs, and the heart behind Sanctuary Community Church.</p>
+</div>
+</section>
+<!-- What We Believe - Bento Grid -->
+<section class="py-section-padding-v-mobile md:py-section-padding-v px-gutter bg-surface">
+<div class="max-w-container-max mx-auto flex flex-col gap-stack-lg">
+<div class="text-center max-w-2xl mx-auto mb-stack-lg">
+<span class="font-eyebrow-sm text-eyebrow-sm text-primary uppercase mb-2 block">All About Jesus</span>
+<h2 class="font-headline-md text-headline-md text-on-background mb-4">What We Believe</h2>
+<p class="font-body-md text-body-md text-text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 border border-surface-variant flex flex-col">
+<div class="h-48 w-full bg-surface-container-low overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="A vibrant worship service with hands raised, contemporary lighting, focus on a large screen displaying the word JESUS, energetic and faithful mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGeDWG07rRI1bfTzX2FRVMRVgdLAceB7P8s8M_btbpBT9x853aG52lPAkIO1ltdxfWOe7-VAEDGBEk6L-1J8C_T4HLaXjijQtXhlwy51kM6ySpIfubzge-58TtrlMTBdVhC2BZNu2YA6VD1ffj68MXiJmdQ2Yzf2KHTt7G5V_euIjTlqvRqv-5e81pMYLeosfaryvrXKAcyfTw6embA0Cnwb4MG0mzCDvZWlz-lXWXQ_Q6d6JDBDlvCrHUXOfIoAQ1qmPdhQgwaNII"/>
+</div>
+<div class="p-stack-lg text-center flex-grow flex flex-col justify-center">
+<h3 class="font-label-bold text-label-bold text-on-background mb-2">Jesus Is Lord</h3>
+<p class="font-body-md text-body-md text-text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus.</p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 border border-surface-variant flex flex-col">
+<div class="h-48 w-full bg-surface-container-low overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="Close up of hands forming a heart shape over an open Bible, warm cinematic lighting, intimate and loving atmosphere, representing God's love." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCutp_-umLrUUWhfxqvxiUETSoK0Go6kK4vIznQiWmBJ7rfKDvXqdqWH0ARbZTMcdhdu0CPJ9M-9jzwsAhFrj-ChGETDN7rjHTgySQLNQDgv4NOvh37Xt-CdzbJ_dl9zz5TyzCOumqdPV77tHqPRdUahZhtPGdh37N-E_cQNKiwITWdT0e20rpFAfkNnyaGNVVZvGMQLOjSvmiomvld8UToxistawLe8yzkVt_J05Q67q7L_YlJK0U0lRx3uUa5hOY11k0krcHjAX9"/>
+</div>
+<div class="p-stack-lg text-center flex-grow flex flex-col justify-center">
+<h3 class="font-label-bold text-label-bold text-on-background mb-2">God Is Love</h3>
+<p class="font-body-md text-body-md text-text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus.</p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 border border-surface-variant flex flex-col">
+<div class="h-48 w-full bg-surface-container-low overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="A person sitting quietly reading a Bible in soft morning light, peaceful and contemplative mood, representing the Holy Spirit." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1Vd2yILlsn1-MV2fV-GR4Ksm-99ymRIs61em7NN7QhoMPRKffVz_FzokQo3Sqb7yUn2ACVxf1Oy-3oJks_CicWhCA6pqUUDJV43nl4DLV93kQQitkfxFDLutdtKNcpzSXcnSW9zZEaKkDKyshBGJ1ObpRhoTKKBZu1dNnyyVn_ScolOo-NtNc6F-ELbS_VlBptgC5Q9zm1Edu3Mw1kY5bsDasp6hCnBuYS2nibF8WCBSLtaq6LkM47tHTMuHkufTIc1rdwCMRTEV4"/>
+</div>
+<div class="p-stack-lg text-center flex-grow flex flex-col justify-center">
+<h3 class="font-label-bold text-label-bold text-on-background mb-2">The Spirit Empowers</h3>
+<p class="font-body-md text-body-md text-text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus.</p>
+</div>
+</div>
+</div>
+<div class="text-center mt-stack-md">
+<a class="inline-flex items-center justify-center px-8 py-3 bg-primary-container text-surface-container-lowest font-label-bold text-label-bold rounded hover:bg-primary transition-colors duration-200" href="#">Learn More About Our Beliefs</a>
+</div>
+</div>
+</section>
+<!-- Pastors Welcome - Asymmetric Split -->
+<section class="py-section-padding-v-mobile md:py-section-padding-v px-gutter bg-surface-container-lowest overflow-hidden">
+<div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<div class="lg:col-span-5 relative">
+<div class="relative rounded-2xl overflow-hidden shadow-lg aspect-[4/5]">
+<img alt="Aaron and Julia Green sitting in a field reading a bible together" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLupE0xGp3Gc6AWX3UDuZHxM1XtUZTLYh441hzH_1o53FFqFBqr5tQrm6oQIo1bmQ21s6p-tfq23J9reIYDl0tz-Ql9_UT4De52VKCiTwtvZMIxAVanDr5rck_tpG0FUYXylqwVkrdg2A1P45tt9S2mA6Jn31g-uwx_HjF8DVVySkmuCZD7A1rkzLJz16qAQBj7rf57wMGC9BlqQmtaqWTxLq_0x0pUCv7KNQ80QJxno7zm9NUz2erec1G7Z"/>
+<!-- Name Badge Overlay -->
+<div class="absolute bottom-0 left-0 right-0 p-stack-md">
+<div class="glass-panel p-4 rounded-xl">
+<h3 class="font-label-bold text-label-bold text-on-secondary-fixed">Aaron &amp; Julia Green</h3>
+<p class="font-caption text-caption text-secondary">Senior Pastors of Church</p>
+</div>
+</div>
+</div>
+<!-- Decorative background element -->
+<div class="absolute -z-10 -bottom-8 -left-8 w-64 h-64 bg-secondary-fixed rounded-full opacity-50 blur-3xl"></div>
+</div>
+<div class="lg:col-span-6 lg:col-start-7 flex flex-col gap-stack-md">
+<span class="font-eyebrow-sm text-eyebrow-sm text-primary uppercase">The Church</span>
+<h2 class="font-headline-md text-headline-md text-on-background">We are a church that believes in Jesus &amp; loves God and people</h2>
+<div class="font-body-md text-body-md text-text-muted flex flex-col gap-4">
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. Donec enim diam vulputate ut pharetra. Sagittis id consectetur purus ut faucibus pulvinar elementum integer enim.</p>
+</div>
+<div class="mt-stack-lg">
+<img class="h-16 object-contain" data-alt="A stylized, elegant cursive signature reading 'Aaron &amp; Julia Green' in dark ink on a transparent background, minimalist." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZ1TAlRi0LBEQUo-MT2ahcp7r7ehLUsGycY7XZxstS03OJMxxeAj3ysv4p_Vm6evi3Y9u8EgS6EMvu6FljGaDns8ePdPSjPh3ySP7UlmXne4PC5LlqwYTPy5Y0H5_ENWnUzi-vsSn4JSCWfh0flqHamkhQeVr7flR01txUmSBNnWTYKdXFAYIM4sYyWtb6VMYZC1TJiwbLKuX-MgytNH8FUfRa3ITxYMJujENzwdkvf8vhBXkIr1bbtGPeO09YvoJMQV87Ea94dUDV"/>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-on-background w-full">
+<div class="w-full py-section-padding-v px-gutter grid grid-cols-1 md:grid-cols-3 gap-stack-lg max-w-container-max mx-auto">
+<div class="flex flex-col gap-stack-md">
+<div class="flex items-center gap-2 mb-4">
+<span aria-hidden="true" class="material-symbols-outlined text-primary-fixed text-3xl" data-icon="church">church</span>
+<span class="font-headline-md text-headline-md text-primary-fixed">Sanctuary</span>
+</div>
+<p class="font-body-md text-body-md text-surface-variant dark:text-on-surface-variant opacity-80">A church in New York, NY where you can connect with your destiny</p>
+<div class="font-body-md text-body-md text-surface-variant opacity-80 mt-4">
+<p>1773 Turkey Pen Road</p>
+<p>New York, NY 10013</p>
+<p class="font-bold mt-2">1-800-123-4567</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-gutter">
+<div class="flex flex-col gap-stack-sm">
+<h4 class="font-label-bold text-label-bold text-primary-fixed mb-2">Weekly Gatherings</h4>
+<a class="font-body-md text-body-md text-surface-variant hover:text-primary-container transition-colors opacity-80 hover:opacity-100" href="#">All Events</a>
+<a class="font-body-md text-body-md text-surface-variant hover:text-primary-container transition-colors opacity-80 hover:opacity-100" href="#">City Heights Outreach</a>
+<a class="font-body-md text-body-md text-surface-variant hover:text-primary-container transition-colors opacity-80 hover:opacity-100" href="#">Sunday Gathering</a>
+</div>
+<div class="flex flex-col gap-stack-sm">
+<h4 class="font-label-bold text-label-bold text-primary-fixed mb-2">Useful Links</h4>
+<a class="font-body-md text-body-md text-surface-variant hover:text-primary-container transition-colors opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-surface-variant hover:text-primary-container transition-colors opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-surface-variant hover:text-primary-container transition-colors opacity-80 hover:opacity-100" href="#">Volunteer</a>
+<a class="font-body-md text-body-md text-surface-variant hover:text-primary-container transition-colors opacity-80 hover:opacity-100" href="#">Staff Login</a>
+</div>
+</div>
+<div class="flex flex-col gap-stack-md items-start md:items-end text-left md:text-right">
+<h3 class="font-headline-md text-headline-md text-primary-fixed mb-2">See What God Can Do Through You.</h3>
+<a class="inline-flex items-center justify-center px-6 py-3 bg-primary-container text-surface-container-lowest font-label-bold text-label-bold uppercase rounded hover:bg-primary transition-colors duration-200 mt-2" href="#">Donate</a>
+</div>
+</div>
+<div class="bg-surface-dim border-t border-surface-variant/20 py-4 text-center">
+<p class="font-caption text-caption text-surface-variant opacity-60">© 2024 Sanctuary Community Church. All rights reserved.</p>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+/* Paleta derivada do logo (#56533A fundo + símbolo branco) */
+@theme {
+	/* Brand */
+	--color-primary: #56533a;
+	--color-primary-container: #7a7655;
+	--color-primary-fixed: #e8e6d9;
+	--color-primary-fixed-dim: #c9c5ad;
+	--color-on-primary: #ffffff;
+	--color-on-primary-container: #2a291f;
+
+	/* Surfaces */
+	--color-background: #f7f6f2;
+	--color-surface: #f7f6f2;
+	--color-surface-bright: #fbfaf7;
+	--color-surface-dim: #e5e3d8;
+	--color-surface-white: #ffffff;
+	--color-surface-variant: #e5e3d8;
+	--color-surface-container: #eceae1;
+	--color-surface-container-low: #f2f1eb;
+	--color-surface-container-lowest: #ffffff;
+	--color-surface-container-high: #e8e6dc;
+	--color-surface-container-highest: #e0ddd2;
+
+	/* Text & secondary */
+	--color-on-background: #1f1e18;
+	--color-on-surface: #1f1e18;
+	--color-on-surface-variant: #4a4839;
+	--color-text-muted: #6b6a5c;
+	--color-secondary: #6b6755;
+	--color-secondary-fixed: #e8e6d9;
+	--color-on-secondary: #ffffff;
+	--color-on-secondary-fixed: #2a291f;
+	--color-on-secondary-fixed-variant: #4a4839;
+
+	/* Accents / utility */
+	--color-outline: #8a8773;
+	--color-outline-variant: #c9c5ad;
+	--color-inverse-surface: #333128;
+	--color-inverse-on-surface: #f2f1eb;
+
+	/* Radius */
+	--radius-DEFAULT: 0.25rem;
+	--radius-lg: 0.5rem;
+	--radius-xl: 0.75rem;
+	--radius-full: 9999px;
+
+	/* Spacing tokens (espelham o exemplo) */
+	--spacing-stack-sm: 8px;
+	--spacing-stack-md: 16px;
+	--spacing-stack-lg: 32px;
+	--spacing-gutter: 24px;
+	--spacing-container-max: 1200px;
+	--spacing-section-padding-v: 80px;
+	--spacing-section-padding-v-mobile: 48px;
+
+	/* Fonts */
+	--font-display: "DM Serif Display", ui-serif, Georgia, serif;
+	--font-body: "Jost", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+	html {
+		scroll-behavior: smooth;
+	}
+
+	body {
+		@apply bg-background text-on-background antialiased;
+		font-family: var(--font-body);
+	}
+
+	::selection {
+		background-color: var(--color-primary-container);
+		color: white;
+	}
+}
+
+@layer utilities {
+	.glass-panel {
+		background: rgba(255, 255, 255, 0.85);
+		backdrop-filter: blur(12px);
+		-webkit-backdrop-filter: blur(12px);
+		border: 1px solid rgba(255, 255, 255, 0.3);
+	}
+
+	.text-shadow-sm {
+		text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+	}
+
+	.font-display {
+		font-family: var(--font-display);
+	}
+
+	.font-body {
+		font-family: var(--font-body);
+	}
+}

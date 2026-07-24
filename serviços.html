@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Our Services | Sanctuary</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&amp;family=Jost:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS Config -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#c6d7fe",
+                        "secondary-fixed": "#d7e3ff",
+                        "surface-bright": "#f7f9fd",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-tint": "#a23f12",
+                        "tertiary-fixed-dim": "#b4c7ed",
+                        "inverse-primary": "#ffb59a",
+                        "surface-dim": "#d8dade",
+                        "on-secondary-fixed": "#071b38",
+                        "primary-fixed": "#ffdbce",
+                        "on-primary-container": "#641f00",
+                        "surface-container-low": "#f2f4f8",
+                        "primary": "#a23f12",
+                        "surface-white": "#FFFFFF",
+                        "text-muted": "#5C6A7E",
+                        "background": "#f7f9fd",
+                        "tertiary": "#4c5f80",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#344767",
+                        "on-secondary-fixed-variant": "#364766",
+                        "secondary-fixed-dim": "#b5c7ec",
+                        "on-primary-fixed": "#370e00",
+                        "on-background": "#191c1f",
+                        "inverse-on-surface": "#eff1f5",
+                        "on-surface": "#191c1f",
+                        "surface": "#f7f9fd",
+                        "on-secondary-container": "#4d5e7e",
+                        "tertiary-fixed": "#d6e3ff",
+                        "on-tertiary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#e0e2e6",
+                        "on-tertiary-container": "#233756",
+                        "on-tertiary-fixed": "#051b39",
+                        "primary-container": "#f67d4c",
+                        "primary-fixed-dim": "#ffb59a",
+                        "inverse-surface": "#2d3134",
+                        "surface-container-highest": "#e0e2e6",
+                        "outline-variant": "#dec0b6",
+                        "tertiary-container": "#8da0c4",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#802a00",
+                        "on-error-container": "#93000a",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#eceef2",
+                        "on-error": "#ffffff",
+                        "success-green": "#2ECC71",
+                        "on-surface-variant": "#57423b",
+                        "secondary": "#4e5f7f",
+                        "outline": "#8a7269",
+                        "surface-container-high": "#e6e8ec"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-sm": "8px",
+                        "section-padding-v": "80px",
+                        "stack-lg": "32px",
+                        "stack-md": "16px",
+                        "gutter": "24px",
+                        "container-max": "1200px",
+                        "section-padding-v-mobile": "48px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["DM Serif Display"],
+                        "headline-md": ["DM Serif Display"],
+                        "caption": ["Jost"],
+                        "eyebrow-sm": ["Jost"],
+                        "label-bold": ["Jost"],
+                        "display-lg": ["DM Serif Display"],
+                        "body-md": ["Jost"],
+                        "body-lg": ["Jost"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["40px", {"lineHeight": "48px", "fontWeight": "400"}],
+                        "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                        "eyebrow-sm": ["14px", {"lineHeight": "20px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "label-bold": ["16px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "display-lg": ["64px", {"lineHeight": "72px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased selection:bg-secondary-container selection:text-on-background">
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-inverse-surface shadow-sm docked full-width top-0 sticky z-50">
+<nav class="flex justify-between items-center px-gutter w-full max-w-container-max mx-auto h-20">
+<a class="font-headline-md text-headline-md text-primary dark:text-primary-fixed scale-95 active:scale-90 transition-transform" href="#">
+                Sanctuary
+            </a>
+<div class="hidden md:flex items-center gap-stack-lg">
+<ul class="flex items-center gap-stack-lg">
+<li>
+<a class="font-label-bold text-label-bold text-secondary dark:text-secondary-fixed hover:text-primary hover:text-primary-container transition-colors duration-200" href="#">Home</a>
+</li>
+<li>
+<a class="font-label-bold text-label-bold text-secondary dark:text-secondary-fixed hover:text-primary hover:text-primary-container transition-colors duration-200" href="#">About</a>
+</li>
+<li>
+<a class="font-label-bold text-label-bold text-primary dark:text-primary-fixed border-b-2 border-primary pb-1 hover:text-primary-container transition-colors duration-200" href="#">Services</a>
+</li>
+<li>
+<a class="font-label-bold text-label-bold text-secondary dark:text-secondary-fixed hover:text-primary hover:text-primary-container transition-colors duration-200" href="#">Give</a>
+</li>
+<li>
+<a class="font-label-bold text-label-bold text-secondary dark:text-secondary-fixed hover:text-primary hover:text-primary-container transition-colors duration-200" href="#">Contact</a>
+</li>
+</ul>
+<button class="bg-primary-container text-on-primary font-label-bold text-label-bold px-6 py-2 rounded-lg hover:bg-surface-tint transition-colors scale-95 active:scale-90 shadow-sm hover:shadow-md">
+                    Donate
+                </button>
+</div>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-primary p-2 scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[28px]">menu</span>
+</button>
+</nav>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative w-full h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden bg-on-background">
+<img alt="" class="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-overlay" src="https://lh3.googleusercontent.com/aida/AP1WRLsnHQkz2fWiP1XXCboqLkbXJjwvwk0JcU8Ek_iYcM3_C9vIDStkf5XknCgPI45XwwKoC3VVArB1PSYFEjSLuRF6hX0DoZq8ZEoP6YOUSGr_9mKImraGqahDV3UN7ByL1eOOH2dfiiuIvsndvdy-bS9ay-SyMDbTWRceOkxexO4obH0QtqYTEU-C_J6ZC8km_8mWZTrTlwA5U8Gw1gZTaf1J43kP6MVkOHTkU4jOB2ZWWsEFfhOJ_D18g5VU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/80 to-transparent"></div>
+<div class="relative z-10 text-center px-gutter max-w-[800px] mx-auto">
+<span class="font-eyebrow-sm text-eyebrow-sm text-primary-fixed uppercase tracking-wider block mb-stack-sm">Our Calling</span>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-surface-container-lowest mb-stack-md">
+                    We Love Serving Our Local Community
+                </h1>
+<p class="font-body-lg text-body-lg text-surface-container-lowest/90 max-w-2xl mx-auto mb-stack-lg">
+                    We believe faith is best expressed through action. Discover the various ways we strive to support, uplift, and connect with our neighbors throughout the week.
+                </p>
+</div>
+</section>
+<!-- Services Grid Section (Bento Style) -->
+<section class="py-section-padding-v-mobile md:py-section-padding-v px-gutter bg-surface-container-low">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-section-padding-v-mobile">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-stack-sm">How We Serve</h2>
+<p class="font-body-md text-body-md text-text-muted max-w-2xl mx-auto">
+                        From weekly gatherings to specialized support programs, there is a place for everyone to find community and care.
+                    </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-stack-lg">
+<!-- Service Card 1 -->
+<div class="bg-surface-container-lowest p-stack-lg rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-surface-variant hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)] transition-all duration-300 group flex flex-col h-full">
+<div class="w-12 h-12 rounded-lg bg-secondary-fixed flex items-center justify-center mb-stack-md text-on-secondary-fixed group-hover:bg-primary-container group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined icon-fill">church</span>
+</div>
+<h3 class="font-headline-md text-[24px] leading-[32px] text-on-surface mb-stack-sm">Weekly Services</h3>
+<p class="font-body-md text-body-md text-text-muted mb-stack-md flex-grow">
+                            Join us every Sunday for uplifting worship and practical teaching from the Word. We offer multiple service times to fit your schedule.
+                        </p>
+<a class="inline-flex items-center gap-2 font-label-bold text-label-bold text-primary hover:text-primary-container transition-colors mt-auto w-fit" href="#">
+                            Learn More <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+<!-- Service Card 2 -->
+<div class="bg-surface-container-lowest p-stack-lg rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-surface-variant hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)] transition-all duration-300 group flex flex-col h-full">
+<div class="w-12 h-12 rounded-lg bg-secondary-fixed flex items-center justify-center mb-stack-md text-on-secondary-fixed group-hover:bg-primary-container group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined icon-fill">groups</span>
+</div>
+<h3 class="font-headline-md text-[24px] leading-[32px] text-on-surface mb-stack-sm">Youth</h3>
+<p class="font-body-md text-body-md text-text-muted mb-stack-md flex-grow">
+                            A dedicated space for middle and high school students to build lasting friendships, ask tough questions, and grow in their faith.
+                        </p>
+<a class="inline-flex items-center gap-2 font-label-bold text-label-bold text-primary hover:text-primary-container transition-colors mt-auto w-fit" href="#">
+                            Learn More <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+<!-- Service Card 3 -->
+<div class="bg-surface-container-lowest p-stack-lg rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-surface-variant hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)] transition-all duration-300 group flex flex-col h-full">
+<div class="w-12 h-12 rounded-lg bg-secondary-fixed flex items-center justify-center mb-stack-md text-on-secondary-fixed group-hover:bg-primary-container group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined icon-fill">child_care</span>
+</div>
+<h3 class="font-headline-md text-[24px] leading-[32px] text-on-surface mb-stack-sm">Kids</h3>
+<p class="font-body-md text-body-md text-text-muted mb-stack-md flex-grow">
+                            Safe, engaging, and age-appropriate environments where children learn about God's love through interactive stories and activities.
+                        </p>
+<a class="inline-flex items-center gap-2 font-label-bold text-label-bold text-primary hover:text-primary-container transition-colors mt-auto w-fit" href="#">
+                            Learn More <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+<!-- Service Card 4 -->
+<div class="bg-surface-container-lowest p-stack-lg rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-surface-variant hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)] transition-all duration-300 group flex flex-col h-full lg:col-start-1">
+<div class="w-12 h-12 rounded-lg bg-secondary-fixed flex items-center justify-center mb-stack-md text-on-secondary-fixed group-hover:bg-primary-container group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined icon-fill">event_available</span>
+</div>
+<h3 class="font-headline-md text-[24px] leading-[32px] text-on-surface mb-stack-sm">Special Events</h3>
+<p class="font-body-md text-body-md text-text-muted mb-stack-md flex-grow">
+                            From community picnics to holiday gatherings, our special events are designed to bring people together and celebrate life's moments.
+                        </p>
+<a class="inline-flex items-center gap-2 font-label-bold text-label-bold text-primary hover:text-primary-container transition-colors mt-auto w-fit" href="#">
+                            View Calendar <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+<!-- Service Card 5 -->
+<div class="bg-surface-container-lowest p-stack-lg rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-surface-variant hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)] transition-all duration-300 group flex flex-col h-full">
+<div class="w-12 h-12 rounded-lg bg-secondary-fixed flex items-center justify-center mb-stack-md text-on-secondary-fixed group-hover:bg-primary-container group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined icon-fill">psychology</span>
+</div>
+<h3 class="font-headline-md text-[24px] leading-[32px] text-on-surface mb-stack-sm">Counseling</h3>
+<p class="font-body-md text-body-md text-text-muted mb-stack-md flex-grow">
+                            Professional, compassionate, and confidential biblical counseling to help navigate life's challenges, grief, and relational struggles.
+                        </p>
+<a class="inline-flex items-center gap-2 font-label-bold text-label-bold text-primary hover:text-primary-container transition-colors mt-auto w-fit" href="#">
+                            Get Support <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+<!-- Service Card 6 -->
+<div class="bg-surface-container-lowest p-stack-lg rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-surface-variant hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)] transition-all duration-300 group flex flex-col h-full">
+<div class="w-12 h-12 rounded-lg bg-secondary-fixed flex items-center justify-center mb-stack-md text-on-secondary-fixed group-hover:bg-primary-container group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined icon-fill">volunteer_activism</span>
+</div>
+<h3 class="font-headline-md text-[24px] leading-[32px] text-on-surface mb-stack-sm">Benevolence</h3>
+<p class="font-body-md text-body-md text-text-muted mb-stack-md flex-grow">
+                            Meeting practical needs within our community. We provide short-term financial assistance, meals, and resources to those facing hardship.
+                        </p>
+<a class="inline-flex items-center gap-2 font-label-bold text-label-bold text-primary hover:text-primary-container transition-colors mt-auto w-fit" href="#">
+                            Request Help <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Community Focus (Asymmetric Layout) -->
+<section class="py-section-padding-v-mobile md:py-section-padding-v px-gutter bg-surface">
+<div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-12 gap-stack-lg items-center">
+<div class="lg:col-span-5 order-2 lg:order-1">
+<span class="font-eyebrow-sm text-eyebrow-sm text-text-muted uppercase tracking-wider block mb-stack-sm">Community Impact</span>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-stack-md">
+                        Building Better Lives Together
+                    </h2>
+<p class="font-body-md text-body-md text-text-muted mb-stack-md">
+                        Our goal is to reach the victims in our community who are under oppression from people, addiction, or systemic systems. We work every day to help people build better lives through genuine connection and tangible support.
+                    </p>
+<p class="font-body-md text-body-md text-text-muted mb-stack-lg">
+                        Whether it's a family picnic at the park or a dedicated outreach program, we believe that profound change happens when people gather with shared purpose and unconditional love.
+                    </p>
+<div class="flex flex-wrap gap-stack-md">
+<button class="bg-primary-container text-on-primary font-label-bold text-label-bold px-6 py-3 rounded-lg hover:bg-surface-tint transition-colors shadow-sm hover:shadow-md">
+                            Join a Group
+                        </button>
+<button class="bg-transparent border-2 border-on-secondary-fixed text-on-secondary-fixed font-label-bold text-label-bold px-6 py-3 rounded-lg hover:bg-surface-container-low transition-colors">
+                            Volunteer With Us
+                        </button>
+</div>
+</div>
+<div class="lg:col-span-7 order-1 lg:order-2 relative">
+<div class="aspect-[4/3] w-full rounded-xl overflow-hidden shadow-[0_8px_40px_rgba(0,0,0,0.08)] relative">
+<img alt="" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLuDb-LfBaIF2wTu1yguBKYvcA7qJyXBYXO00mq8rA96FHXcpgRIQAwA0_gTqdhITRrBI0-Idalwwj55b6bwVdtAIgcnD8MOh1hDr0VzJ8c5FvNtgTmKmXjkOBST6RrXSrpu796cf3DD_rXnTdoD4vRkjORJcM4hfaXr77XC1na4h3Fkydte31f5cc26Ka4q4FQTJ9gNUHx-EAyFQ1FMlRv0ibewFY1x1Y7KSJvlGzAnMRmdWuFHQ0aRqvU"/>
+</div>
+<!-- Decorative element -->
+<div class="absolute -bottom-6 -left-6 w-24 h-24 bg-primary-fixed-dim rounded-full -z-10 blur-2xl opacity-50"></div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-section-padding-v px-gutter grid grid-cols-1 md:grid-cols-3 gap-stack-lg max-w-container-max mx-auto bg-on-background dark:bg-surface-container-lowest">
+<div class="flex flex-col gap-stack-sm">
+<span class="font-headline-md text-headline-md text-primary-fixed">Sanctuary</span>
+<p class="font-body-md text-body-md text-surface-variant dark:text-on-surface-variant mt-stack-sm">
+                © 2024 Sanctuary Community Church. All rights reserved.
+            </p>
+</div>
+<div class="flex flex-col gap-stack-sm">
+<h4 class="font-label-bold text-label-bold text-primary-fixed mb-stack-sm">Quick Links</h4>
+<ul class="flex flex-col gap-2">
+<li><a class="font-body-md text-body-md text-surface-variant dark:text-on-surface-variant hover:text-primary-container transition-colors opacity-80 hover:opacity-100" href="#">Privacy Policy</a></li>
+<li><a class="font-body-md text-body-md text-surface-variant dark:text-on-surface-variant hover:text-primary-container transition-colors opacity-80 hover:opacity-100" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div class="flex flex-col gap-stack-sm">
+<h4 class="font-label-bold text-label-bold text-primary-fixed mb-stack-sm">Get Involved</h4>
+<ul class="flex flex-col gap-2">
+<li><a class="font-body-md text-body-md text-surface-variant dark:text-on-surface-variant hover:text-primary-container transition-colors opacity-80 hover:opacity-100" href="#">Volunteer</a></li>
+<li><a class="font-body-md text-body-md text-surface-variant dark:text-on-surface-variant hover:text-primary-container transition-colors opacity-80 hover:opacity-100" href="#">Staff Login</a></li>
+</ul>
+</div>
+</footer>
+</body></html>

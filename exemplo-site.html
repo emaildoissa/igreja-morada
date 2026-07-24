@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sanctuary Community Church - Home</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&amp;family=Jost:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary-container": "#c6d7fe",
+                        "secondary-fixed": "#d7e3ff",
+                        "surface-bright": "#f7f9fd",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-tint": "#a23f12",
+                        "tertiary-fixed-dim": "#b4c7ed",
+                        "inverse-primary": "#ffb59a",
+                        "surface-dim": "#d8dade",
+                        "on-secondary-fixed": "#071b38",
+                        "primary-fixed": "#ffdbce",
+                        "on-primary-container": "#641f00",
+                        "surface-container-low": "#f2f4f8",
+                        "primary": "#a23f12",
+                        "surface-white": "#FFFFFF",
+                        "text-muted": "#5C6A7E",
+                        "background": "#f7f9fd",
+                        "tertiary": "#4c5f80",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#344767",
+                        "on-secondary-fixed-variant": "#364766",
+                        "secondary-fixed-dim": "#b5c7ec",
+                        "on-primary-fixed": "#370e00",
+                        "on-background": "#191c1f",
+                        "inverse-on-surface": "#eff1f5",
+                        "on-surface": "#191c1f",
+                        "surface": "#f7f9fd",
+                        "on-secondary-container": "#4d5e7e",
+                        "tertiary-fixed": "#d6e3ff",
+                        "on-tertiary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#e0e2e6",
+                        "on-tertiary-container": "#233756",
+                        "on-tertiary-fixed": "#051b39",
+                        "primary-container": "#f67d4c",
+                        "primary-fixed-dim": "#ffb59a",
+                        "inverse-surface": "#2d3134",
+                        "surface-container-highest": "#e0e2e6",
+                        "outline-variant": "#dec0b6",
+                        "tertiary-container": "#8da0c4",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#802a00",
+                        "on-error-container": "#93000a",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#eceef2",
+                        "on-error": "#ffffff",
+                        "success-green": "#2ECC71",
+                        "on-surface-variant": "#57423b",
+                        "secondary": "#4e5f7f",
+                        "outline": "#8a7269",
+                        "surface-container-high": "#e6e8ec"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "stack-sm": "8px",
+                        "section-padding-v": "80px",
+                        "stack-lg": "32px",
+                        "stack-md": "16px",
+                        "gutter": "24px",
+                        "container-max": "1200px",
+                        "section-padding-v-mobile": "48px"
+                    },
+                    fontFamily: {
+                        "display-lg-mobile": ["DM Serif Display"],
+                        "headline-md": ["DM Serif Display"],
+                        "caption": ["Jost"],
+                        "eyebrow-sm": ["Jost"],
+                        "label-bold": ["Jost"],
+                        "display-lg": ["DM Serif Display"],
+                        "body-md": ["Jost"],
+                        "body-lg": ["Jost"]
+                    },
+                    fontSize: {
+                        "display-lg-mobile": ["40px", { lineHeight: "48px", fontWeight: "400" }],
+                        "headline-md": ["32px", { lineHeight: "40px", fontWeight: "400" }],
+                        "caption": ["12px", { lineHeight: "16px", fontWeight: "400" }],
+                        "eyebrow-sm": ["14px", { lineHeight: "20px", letterSpacing: "0.1em", fontWeight: "700" }],
+                        "label-bold": ["16px", { lineHeight: "24px", fontWeight: "600" }],
+                        "display-lg": ["64px", { lineHeight: "72px", fontWeight: "400" }],
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .text-shadow-sm {
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased selection:bg-primary-container selection:text-white flex flex-col min-h-screen">
+<!-- Top Navigation -->
+<header class="bg-surface shadow-sm docked full-width top-0 sticky z-50">
+<div class="flex justify-between items-center px-gutter w-full max-w-container-max mx-auto h-20">
+<a class="font-headline-md text-headline-md text-primary hover:text-primary-container transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary rounded" href="#">Sanctuary</a>
+<nav class="hidden md:flex items-center space-x-8">
+<a class="font-label-bold text-label-bold text-primary border-b-2 border-primary pb-1 scale-95 active:scale-90 transition-transform" href="#">Home</a>
+<a class="font-label-bold text-label-bold text-secondary hover:text-primary transition-colors duration-200 scale-95 active:scale-90 transition-transform" href="#">About</a>
+<a class="font-label-bold text-label-bold text-secondary hover:text-primary transition-colors duration-200 scale-95 active:scale-90 transition-transform" href="#">Services</a>
+<a class="font-label-bold text-label-bold text-secondary hover:text-primary transition-colors duration-200 scale-95 active:scale-90 transition-transform" href="#">Give</a>
+<a class="font-label-bold text-label-bold text-secondary hover:text-primary transition-colors duration-200 scale-95 active:scale-90 transition-transform" href="#">Contact</a>
+</nav>
+<a class="hidden md:inline-flex items-center justify-center px-6 py-2.5 bg-primary-container text-white font-label-bold text-label-bold uppercase tracking-wide rounded hover:bg-primary transition-colors duration-300 shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2" href="#">
+                Donate
+            </a>
+<!-- Mobile Menu Toggle (Visual Only) -->
+<button class="md:hidden text-primary p-2 focus:outline-none">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">menu</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow">
+<!-- Hero Section with Background Image -->
+<section class="relative w-full h-[80vh] min-h-[600px] flex items-center justify-center overflow-hidden">
+<!-- Background Image using Placeholder -->
+<div class="absolute inset-0 z-0">
+<img alt="Hero background" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLtwjQH_08CHxU83dwegUz1edN22tc_FUpZ7oPFowkG1rsdxqPnMflqeFU4q2esKjBhmzg7l294t75w4htvViWYJ7Qv_FnF1HgtL9XFLjAPnjhyXXR3dJGMDGSbTxFHqaQhXs-TKDzLDwwJHxLSABoexvbO7lC_Yo96QPtJmSEMOhrPkPItGQ4F2mQifzMDfzoNoJAPo0s50Fx_cyJTXJZbZD6tonqG6wOCVDgoWywoxr9Wfn7dW-0RF1tj4"/>
+<!-- Overlay -->
+<div class="absolute inset-0 bg-on-secondary-fixed opacity-70"></div>
+</div>
+<div class="relative z-10 text-center px-gutter max-w-4xl mx-auto flex flex-col items-center gap-stack-lg">
+<span class="font-eyebrow-sm text-eyebrow-sm text-primary-fixed uppercase tracking-[0.1em]">Church Love, Faith Love</span>
+<h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-white text-shadow-sm">
+                    Welcome To Our Church
+                </h1>
+<p class="font-body-lg text-body-lg text-surface-container-low max-w-2xl text-shadow-sm">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Urna condimentum mattis pellentesque id nibh tortor.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 mt-stack-sm">
+<a class="inline-flex items-center justify-center px-8 py-4 bg-primary-container text-white font-label-bold text-label-bold uppercase rounded hover:bg-primary transition-colors duration-300 shadow-md" href="#">
+                        I'm New Here
+                    </a>
+</div>
+</div>
+<!-- Floating Join Stream Card -->
+<div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 w-[90%] max-w-3xl z-20">
+<div class="glass-panel rounded-xl shadow-lg p-6 md:p-8 flex flex-col md:flex-row items-center gap-6">
+<div class="w-full md:w-1/3 aspect-[16/9] rounded-lg overflow-hidden flex-shrink-0 bg-surface-variant relative">
+<img class="w-full h-full object-cover absolute inset-0" data-alt="A brightly lit modern church stage during a vibrant worship session. Hands raised in the foreground, soft warm lighting, cinematic depth of field, high contrast between dark silhouettes and stage lights. Minimalist, hopeful mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaPFRR1QJCb8YBRgHlHEqE9fk0NfoI6X-SKTtsWOd4ahObcB_Ne6M965P2L7E-xVBp8kLZsODLDZWaP7H1_S1NWh_apIwEA7B848IlqxOklpwoJZCMZcW2QgFGuepy5Q4lsZ0xVkEX0QgOBDju7t9izH0YlVkupYKY0kgKfyFBTWWKl-s8CKvpD55QO-e22TxWc3KvqrbV7kOw1tg0_F8Tznj4EZdk9Dr3LfMEtASL1yQth4h_c1QdSkro-L64IuPbQpvuZ_l4mSbv"/>
+</div>
+<div class="flex flex-col gap-3 flex-grow text-center md:text-left">
+<h3 class="font-headline-md text-headline-md text-on-surface">Join the Sunday Live Stream</h3>
+<p class="font-body-md text-body-md text-text-muted">Every Sunday at 9:00 am &amp; 11:00 am</p>
+<div class="flex flex-wrap items-center justify-center md:justify-start gap-4 mt-2">
+<a class="inline-flex items-center justify-center px-6 py-2 bg-primary-container text-white font-label-bold text-label-bold uppercase rounded hover:bg-primary transition-colors duration-300" href="#">
+                                Join Now <span class="material-symbols-outlined ml-2 text-[18px]">arrow_forward</span>
+</a>
+<a class="font-label-bold text-label-bold text-secondary hover:text-primary transition-colors duration-200 underline underline-offset-4" href="#">
+                                Past Messages
+                            </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Spacer for Floating Card -->
+<div class="h-32 md:h-24"></div>
+<!-- Services Section (Bento Grid) -->
+<section class="py-section-padding-v-mobile md:py-section-padding-v px-gutter max-w-container-max mx-auto">
+<div class="text-center mb-16 max-w-2xl mx-auto flex flex-col items-center gap-2">
+<span class="font-eyebrow-sm text-eyebrow-sm text-primary uppercase tracking-[0.1em]">Our Services</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">We Love Serving Our Local Community</h2>
+<p class="font-body-md text-body-md text-text-muted mt-4">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+                </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Bento Item 1 -->
+<div class="bg-surface-container-lowest border border-surface-variant rounded-xl p-6 hover:shadow-lg transition-shadow duration-300 group flex flex-col items-start gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed group-hover:bg-primary-container group-hover:text-white transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">menu_book</span>
+</div>
+<div>
+<h4 class="font-label-bold text-label-bold text-on-surface mb-2">Weekly Services</h4>
+<p class="font-body-md text-body-md text-text-muted">Lorem ipsum dolor si adipiscing elit.</p>
+</div>
+</div>
+<!-- Bento Item 2 -->
+<div class="bg-surface-container-lowest border border-surface-variant rounded-xl p-6 hover:shadow-lg transition-shadow duration-300 group flex flex-col items-start gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed group-hover:bg-primary-container group-hover:text-white transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">groups</span>
+</div>
+<div>
+<h4 class="font-label-bold text-label-bold text-on-surface mb-2">Youth</h4>
+<p class="font-body-md text-body-md text-text-muted">Lorem ipsum dolor si adipiscing elit.</p>
+</div>
+</div>
+<!-- Bento Item 3 -->
+<div class="bg-surface-container-lowest border border-surface-variant rounded-xl p-6 hover:shadow-lg transition-shadow duration-300 group flex flex-col items-start gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed group-hover:bg-primary-container group-hover:text-white transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">child_care</span>
+</div>
+<div>
+<h4 class="font-label-bold text-label-bold text-on-surface mb-2">Kids</h4>
+<p class="font-body-md text-body-md text-text-muted">Lorem ipsum dolor si adipiscing elit.</p>
+</div>
+</div>
+</div>
+<div class="mt-12 text-center">
+<a class="inline-flex items-center justify-center px-8 py-3 bg-transparent border-2 border-on-secondary-fixed text-on-secondary-fixed font-label-bold text-label-bold uppercase rounded hover:bg-on-secondary-fixed hover:text-white transition-colors duration-300" href="#">
+                    Learn More
+                </a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-on-background dark:bg-surface-container-lowest w-full py-section-padding-v px-gutter grid grid-cols-1 md:grid-cols-3 gap-stack-lg max-w-container-max mx-auto border-t-0 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
+<div class="flex flex-col gap-4">
+<span class="font-headline-md text-headline-md text-primary-fixed">Sanctuary</span>
+<p class="font-body-md text-body-md text-surface-variant dark:text-on-surface-variant opacity-80 hover:opacity-100 transition-opacity">
+                © 2024 Sanctuary Community Church. All rights reserved.
+            </p>
+</div>
+<div class="md:col-span-2 flex flex-wrap justify-end gap-x-8 gap-y-4">
+<a class="font-body-md text-body-md text-surface-variant dark:text-on-surface-variant hover:text-primary-container transition-colors opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-surface-variant dark:text-on-surface-variant hover:text-primary-container transition-colors opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-surface-variant dark:text-on-surface-variant hover:text-primary-container transition-colors opacity-80 hover:opacity-100" href="#">Volunteer</a>
+<a class="font-body-md text-body-md text-surface-variant dark:text-on-surface-variant hover:text-primary-container transition-colors opacity-80 hover:opacity-100" href="#">Staff Login</a>
+</div>
+</footer>
+</body></html>

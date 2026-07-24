@@ -1,0 +1,79 @@
+---
+---
+
+<div
+	class="rounded-xl border border-surface-variant bg-surface-white p-stack-lg shadow-sm md:col-span-7 md:p-section-padding-v-mobile"
+>
+	<h2 class="mb-stack-lg font-display text-[32px] leading-10 text-on-background">
+		Envie uma Mensagem
+	</h2>
+
+	<form class="space-y-stack-md" action="#" method="post">
+		<div class="grid grid-cols-1 gap-stack-md md:grid-cols-2">
+			<div>
+				<label for="first-name" class="mb-stack-sm block font-body text-base font-semibold leading-6 text-on-background">
+					Nome
+				</label>
+				<input
+					id="first-name"
+					name="firstName"
+					type="text"
+					placeholder="João"
+					autocomplete="given-name"
+					required
+					class="w-full rounded border border-surface-dim bg-surface-bright px-4 py-3 font-body text-base leading-6 text-on-background outline-none transition-all focus:border-primary-container focus:ring-2 focus:ring-primary-container"
+				/>
+			</div>
+			<div>
+				<label for="last-name" class="mb-stack-sm block font-body text-base font-semibold leading-6 text-on-background">
+					Sobrenome
+				</label>
+				<input
+					id="last-name"
+					name="lastName"
+					type="text"
+					placeholder="Silva"
+					autocomplete="family-name"
+					required
+					class="w-full rounded border border-surface-dim bg-surface-bright px-4 py-3 font-body text-base leading-6 text-on-background outline-none transition-all focus:border-primary-container focus:ring-2 focus:ring-primary-container"
+				/>
+			</div>
+		</div>
+
+		<div>
+			<label for="email" class="mb-stack-sm block font-body text-base font-semibold leading-6 text-on-background">
+				E-mail
+			</label>
+			<input
+				id="email"
+				name="email"
+				type="email"
+				placeholder="joao@email.com"
+				autocomplete="email"
+				required
+				class="w-full rounded border border-surface-dim bg-surface-bright px-4 py-3 font-body text-base leading-6 text-on-background outline-none transition-all focus:border-primary-container focus:ring-2 focus:ring-primary-container"
+			/>
+		</div>
+
+		<div>
+			<label for="message" class="mb-stack-sm block font-body text-base font-semibold leading-6 text-on-background">
+				Mensagem
+			</label>
+			<textarea
+				id="message"
+				name="message"
+				rows="5"
+				placeholder="Como podemos ajudar?"
+				required
+				class="w-full resize-none rounded border border-surface-dim bg-surface-bright px-4 py-3 font-body text-base leading-6 text-on-background outline-none transition-all focus:border-primary-container focus:ring-2 focus:ring-primary-container"
+			></textarea>
+		</div>
+
+		<button
+			type="submit"
+			class="mt-stack-sm w-full rounded bg-primary-container px-8 py-3 font-body text-base font-semibold uppercase text-on-primary shadow-sm transition-colors duration-200 hover:bg-on-secondary-fixed hover:text-surface-white hover:shadow-md md:w-auto"
+		>
+			Enviar Mensagem
+		</button>
+	</form>
+</div>
