@@ -6,7 +6,9 @@
 		Envie uma Mensagem
 	</h2>
 
-	<form class="space-y-5" action="#" method="post">
+	<form id="contact-form" class="space-y-5">
+		<div id="form-status" class="hidden rounded-xl p-4 text-sm font-semibold transition-all duration-300"></div>
+
 		<div class="grid grid-cols-1 gap-5 md:grid-cols-2">
 			<div>
 				<label for="first-name" class="mb-2 block font-body text-sm font-semibold leading-5 text-on-background">
@@ -68,10 +70,71 @@
 		</div>
 
 		<button
+			id="submit-btn"
 			type="submit"
-			class="mt-2 w-full rounded-xl bg-accent px-8 py-3.5 font-body text-sm font-semibold uppercase text-white shadow-sm transition-all duration-300 hover:bg-accent-hover hover:shadow-md active:scale-[0.97] md:w-auto"
+			class="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-accent px-8 py-3.5 font-body text-sm font-semibold uppercase text-white shadow-sm transition-all duration-300 hover:bg-accent-hover hover:shadow-md active:scale-[0.97] disabled:pointer-events-none disabled:opacity-60 md:w-auto"
 		>
-			Enviar Mensagem
+			<span id="btn-text">Enviar Mensagem</span>
+			<span id="btn-spinner" class="hidden material-symbols-outlined animate-spin text-[18px]">progress_activity</span>
 		</button>
 	</form>
 </div>
+
+<script>
+	const form = document.getElementById('contact-form') as HTMLFormElement | null;
+	const statusDiv = document.getElementById('form-status');
+	const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement | null;
+	const btnText = document.getElementById('btn-text');
+	const btnSpinner = document.getElementById('btn-spinner');
+
+	const API_URL = 'https://caixa-igreja-flame.vercel.app/api/contato';
+
+	form?.addEventListener('submit', async (e) => {
+		e.preventDefault();
+		if (!statusDiv || !submitBtn || !btnText || !btnSpinner) return;
+
+		// Reset status
+		statusDiv.className = 'hidden rounded-xl p-4 text-sm font-semibold transition-all duration-300';
+		statusDiv.textContent = '';
+
+		// Loading state
+		submitBtn.disabled = true;
+		btnText.textContent = 'Enviando...';
+		btnSpinner.classList.remove('hidden');
+
+		const formData = new FormData(form);
+		const payload = {
+			firstName: formData.get('firstName'),
+			lastName: formData.get('lastName'),
+			email: formData.get('email'),
+			message: formData.get('message'),
+			sentAt: new Date().toISOString(),
+		};
+
+		try {
+			const res = await fetch(API_URL, {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify(payload),
+			});
+
+			if (res.ok) {
+				statusDiv.className = 'block rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 p-4 text-sm font-semibold mb-4 flex items-center gap-2';
+				statusDiv.innerHTML = '<span class="material-symbols-outlined text-emerald-600">check_circle</span> Mensagem enviada com sucesso! Em breve entraremos em contato.';
+				form.reset();
+			} else {
+				throw new Error('Servidor retornou erro: ' + res.status);
+			}
+		} catch (err) {
+			console.error('Erro ao enviar formulário:', err);
+			statusDiv.className = 'block rounded-xl bg-rose-50 border border-rose-200 text-rose-800 p-4 text-sm font-semibold mb-4 flex items-center gap-2';
+			statusDiv.innerHTML = '<span class="material-symbols-outlined text-rose-600">error</span> Não foi possível enviar no momento. Por favor, tente novamente mais tarde.';
+		} finally {
+			submitBtn.disabled = false;
+			btnText.textContent = 'Enviar Mensagem';
+			btnSpinner.classList.add('hidden');
+		}
+	});
+</script>
