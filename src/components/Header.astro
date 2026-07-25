@@ -146,8 +146,8 @@ const navLinks: NavLink[] = [
 <script>
 	const toggle = document.getElementById('menu-toggle');
 	const menu = document.getElementById('mobile-menu');
-	const iconOpen = toggle?.querySelector('[data-icon-open]');
-	const iconClose = toggle?.querySelector('[data-icon-close]');
+	const iconOpen = toggle?.querySelector<HTMLElement>('[data-icon-open]');
+	const iconClose = toggle?.querySelector<HTMLElement>('[data-icon-close]');
 	const overlay = document.getElementById('menu-overlay');
 
 	function setOpen(open: boolean) {
