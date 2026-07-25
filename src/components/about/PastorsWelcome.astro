@@ -3,39 +3,41 @@ const pastorImage =
 	'https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=900&q=80';
 ---
 
-<section class="overflow-hidden bg-surface-container-lowest px-gutter py-section-padding-v-mobile md:py-section-padding-v">
-	<div class="mx-auto grid max-w-container-max grid-cols-1 items-center gap-gutter lg:grid-cols-12">
-		<div class="relative lg:col-span-5">
-			<div class="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-lg">
-				<img
-					src={pastorImage}
-					alt="Liderança pastoral da Igreja Morada"
-					class="h-full w-full object-cover"
-					loading="lazy"
-				/>
-				<div class="absolute bottom-0 left-0 right-0 p-stack-md">
-					<div class="glass-panel rounded-xl p-4">
-						<h3 class="font-body text-base font-semibold leading-6 text-on-secondary-fixed">
-							Nossa Pastoral
-						</h3>
-						<p class="font-body text-xs leading-4 text-secondary">
-							Liderança da Igreja Morada
-						</p>
+<section class="relative overflow-hidden bg-surface-container-lowest px-gutter py-section-padding-v-mobile md:py-section-padding-v">
+	<div class="absolute -bottom-20 -left-20 h-80 w-80 rounded-full bg-accent/10 blur-3xl" aria-hidden="true"></div>
+
+	<div class="relative mx-auto grid max-w-container-max grid-cols-1 items-center gap-10 lg:grid-cols-12">
+		<div class="reveal lg:col-span-5">
+			<div class="relative">
+				<div class="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-lg">
+					<img
+						src={pastorImage}
+						alt="Liderança pastoral da Igreja Morada"
+						class="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+						loading="lazy"
+					/>
+					<div class="absolute inset-0 bg-gradient-to-t from-[#2c2a24]/40 to-transparent"></div>
+					<div class="absolute bottom-0 left-0 right-0 p-5">
+						<div class="rounded-xl bg-white/90 backdrop-blur-sm px-4 py-3">
+							<h3 class="font-body text-sm font-semibold leading-5 text-on-surface">
+								Nossa Pastoral
+							</h3>
+							<p class="font-body text-xs leading-4 text-text-muted">
+								Liderança da Igreja Morada
+							</p>
+						</div>
 					</div>
 				</div>
-			</div>
-			<div
-				class="absolute -bottom-8 -left-8 -z-10 h-64 w-64 rounded-full bg-secondary-fixed opacity-50 blur-3xl"
-				aria-hidden="true"
-			>
+				<div class="absolute -bottom-4 -left-4 -z-10 h-32 w-32 rounded-2xl border-2 border-accent/30" aria-hidden="true"></div>
+				<div class="absolute -top-4 -right-4 -z-10 h-24 w-24 rounded-full bg-accent-soft/40 blur-xl" aria-hidden="true"></div>
 			</div>
 		</div>
 
-		<div class="flex flex-col gap-stack-md lg:col-span-6 lg:col-start-7">
-			<span class="font-body text-sm font-bold uppercase tracking-[0.1em] text-primary">
+		<div class="reveal stagger-1 flex flex-col gap-5 lg:col-span-6 lg:col-start-7">
+			<span class="font-body text-sm font-bold uppercase tracking-[0.15em] text-accent">
 				A Igreja
 			</span>
-			<h2 class="font-display text-[32px] leading-10 text-on-background">
+			<h2 class="font-display text-[32px] leading-10 text-on-background md:text-[38px] md:leading-[46px]">
 				Somos uma igreja que crê em Jesus e ama a Deus e as pessoas
 			</h2>
 			<div class="flex flex-col gap-4 font-body text-base leading-6 text-text-muted">
@@ -49,11 +51,8 @@ const pastorImage =
 					propósito que Deus tem para a sua vida.
 				</p>
 			</div>
-			<div class="mt-stack-lg">
-				<p
-					class="font-display text-3xl italic leading-none text-primary/80"
-					aria-label="Assinatura da pastoral"
-				>
+			<div class="mt-4">
+				<p class="font-display text-3xl italic leading-none text-accent" aria-label="Assinatura da pastoral">
 					Com carinho, a família Morada
 				</p>
 			</div>

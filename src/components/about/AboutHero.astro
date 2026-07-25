@@ -3,25 +3,24 @@ const heroImage =
 	'https://images.unsplash.com/photo-1438032005730-c779502df39b?auto=format&fit=crop&w=1920&q=80';
 ---
 
-<section class="relative flex h-[60vh] min-h-[500px] w-full items-center justify-center overflow-hidden">
+<section class="relative flex h-[55vh] min-h-[480px] w-full items-center justify-center overflow-hidden">
 	<div
 		class="absolute inset-0 bg-cover bg-center"
 		style={`background-image: url('${heroImage}')`}
 		role="img"
 		aria-label="Interior acolhedor de igreja durante o culto"
-	>
-	</div>
-	<div class="absolute inset-0 bg-on-secondary-fixed/80"></div>
+	/>
+	<div class="absolute inset-0 bg-gradient-to-br from-[#2c2a24]/85 via-[#56533a]/75 to-[#c25b3a]/25"></div>
 
-	<div
-		class="relative z-10 mx-auto flex max-w-container-max flex-col items-center gap-stack-lg px-gutter text-center text-surface-container-lowest"
-	>
-		<h1 class="max-w-3xl font-display text-[40px] leading-[48px] md:text-[64px] md:leading-[72px]">
-			Sobre a Nossa Igreja
-		</h1>
-		<p class="max-w-2xl font-body text-lg leading-7 opacity-90">
-			Somos uma igreja que crê em Jesus e ama a Deus e as pessoas. Conheça nossa missão, nossas
-			crenças e o coração por trás da Igreja Morada.
-		</p>
+	<div class="relative z-10 mx-auto max-w-container-max px-gutter">
+		<div class="max-w-2xl">
+			<h1 class="reveal font-display text-[36px] leading-[44px] text-white text-shadow-soft sm:text-[44px] sm:leading-[52px] md:text-[68px] md:leading-[76px]">
+				Sobre a Nossa Igreja
+			</h1>
+			<p class="reveal stagger-1 mt-5 max-w-xl font-body text-lg leading-7 text-surface-container-low/90">
+				Somos uma igreja que crê em Jesus e ama a Deus e as pessoas. Conheça nossa missão, nossas
+				crenças e o coração por trás da Igreja Morada.
+			</p>
+		</div>
 	</div>
 </section>

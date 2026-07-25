@@ -27,23 +27,24 @@ const socials = [
 ];
 ---
 
-<div class="flex flex-col gap-gutter md:col-span-5">
-	<!-- Info card -->
-	<div class="rounded-xl border border-surface-variant bg-surface-white p-stack-lg shadow-sm">
-		<h3 class="mb-stack-md font-display text-2xl leading-8 text-on-background">
+<div class="flex flex-col gap-6 md:col-span-5">
+	<div class="rounded-2xl border border-surface-variant bg-surface-white p-8 shadow-sm">
+		<h3 class="mb-6 font-display text-2xl leading-8 text-on-background">
 			Informações de Contato
 		</h3>
 
-		<div class="mt-stack-md flex flex-col gap-stack-md">
+		<div class="flex flex-col gap-5">
 			{
 				contactItems.map((item) => (
-					<div class="flex items-start gap-stack-sm">
-						<span class="material-symbols-outlined mt-1 text-primary-container">{item.icon}</span>
+					<div class="flex items-start gap-4">
+						<div class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-accent/10 text-accent">
+							<span class="material-symbols-outlined text-[20px]">{item.icon}</span>
+						</div>
 						<div>
-							<h4 class="font-body text-base font-semibold leading-6 text-on-background">
+							<h4 class="font-body text-sm font-semibold leading-5 text-on-background">
 								{item.title}
 							</h4>
-							<p class="mt-1 font-body text-base leading-6 text-on-surface-variant">
+							<p class="mt-0.5 font-body text-sm leading-5 text-text-muted">
 								{item.lines.map((line, i) => (
 									<>
 										{i > 0 && <br />}
@@ -57,13 +58,13 @@ const socials = [
 			}
 		</div>
 
-		<div class="mt-stack-lg flex gap-stack-sm border-t border-surface-variant pt-stack-md">
+		<div class="mt-6 flex gap-3 border-t border-surface-variant pt-5">
 			{
 				socials.map((social) => (
 					<a
 						href={social.href}
 						aria-label={social.label}
-						class="flex h-10 w-10 items-center justify-center rounded-full bg-surface-bright text-on-background transition-colors hover:bg-primary-container hover:text-surface-white"
+						class="flex h-10 w-10 items-center justify-center rounded-xl bg-surface-bright text-text-muted transition-all duration-200 hover:bg-accent hover:text-white"
 					>
 						<span class="material-symbols-outlined text-[20px]">{social.icon}</span>
 					</a>
@@ -72,12 +73,11 @@ const socials = [
 		</div>
 	</div>
 
-	<!-- Map card -->
 	<a
 		href="https://maps.google.com"
 		target="_blank"
 		rel="noopener noreferrer"
-		class="group relative h-64 overflow-hidden rounded-xl border border-surface-variant bg-surface-white shadow-sm"
+		class="group relative h-64 overflow-hidden rounded-2xl border border-surface-variant bg-surface-white shadow-sm"
 	>
 		<img
 			src={mapImage}
@@ -85,15 +85,12 @@ const socials = [
 			class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
 			loading="lazy"
 		/>
-		<div
-			class="absolute inset-0 bg-on-background/10 transition-colors duration-500 group-hover:bg-transparent"
-		>
-		</div>
-		<div
-			class="absolute bottom-4 left-4 right-4 flex items-center justify-between rounded-lg border border-surface-variant bg-surface-white/90 p-3 backdrop-blur-sm"
-		>
+		<div class="absolute inset-0 bg-on-background/5 transition-colors duration-500 group-hover:bg-transparent"></div>
+		<div class="absolute bottom-4 left-4 right-4 flex items-center justify-between rounded-xl border border-surface-variant bg-white/90 p-3.5 backdrop-blur-sm">
 			<span class="font-body text-sm font-semibold text-on-background">Ver no Mapa</span>
-			<span class="material-symbols-outlined text-primary-container">arrow_forward</span>
+			<div class="flex h-8 w-8 items-center justify-center rounded-lg bg-accent/10 text-accent transition-colors group-hover:bg-accent group-hover:text-white">
+				<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+			</div>
 		</div>
 	</a>
 </div>

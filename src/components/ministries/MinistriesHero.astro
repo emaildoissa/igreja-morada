@@ -3,30 +3,27 @@ const heroImage =
 	'https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1920&q=80';
 ---
 
-<section
-	class="relative flex h-[60vh] min-h-[500px] w-full items-center justify-center overflow-hidden"
->
+<section class="relative flex h-[55vh] min-h-[480px] w-full items-center justify-center overflow-hidden">
 	<div
 		class="absolute inset-0 bg-cover bg-center"
 		style={`background-image: url('${heroImage}')`}
 		role="img"
 		aria-label="Comunidade reunida em serviço e comunhão"
-	>
-	</div>
-	<div class="absolute inset-0 bg-gradient-to-t from-on-secondary-fixed/90 via-on-secondary-fixed/70 to-on-secondary-fixed/50"></div>
+	/>
+	<div class="absolute inset-0 bg-gradient-to-br from-[#2c2a24]/85 via-[#56533a]/75 to-[#c25b3a]/25"></div>
 
-	<div
-		class="relative z-10 mx-auto flex max-w-[800px] flex-col items-center gap-stack-md px-gutter text-center text-surface-container-lowest"
-	>
-		<span class="font-body text-sm font-bold uppercase tracking-[0.1em] text-primary-fixed">
-			Nosso Chamado
-		</span>
-		<h1 class="font-display text-[40px] leading-[48px] md:text-[64px] md:leading-[72px]">
-			Servimos nossa comunidade com amor
-		</h1>
-		<p class="max-w-2xl font-body text-lg leading-7 text-surface-container-lowest/90">
-			Acreditamos que a fé se expressa em ação. Conheça os caminhos pelos quais acolhemos, cuidamos
-			e caminhamos com as pessoas ao nosso redor.
-		</p>
+	<div class="relative z-10 mx-auto max-w-container-max px-gutter">
+		<div class="max-w-2xl">
+			<span class="reveal mb-4 block font-body text-sm font-bold uppercase tracking-[0.15em] text-accent-soft">
+				Nosso Chamado
+			</span>
+			<h1 class="reveal stagger-1 font-display text-[36px] leading-[44px] text-white text-shadow-soft sm:text-[44px] sm:leading-[52px] md:text-[68px] md:leading-[76px]">
+				Servimos nossa comunidade com amor
+			</h1>
+			<p class="reveal stagger-2 mt-5 max-w-xl font-body text-lg leading-7 text-surface-container-low/90">
+				Acreditamos que a fé se expressa em ação. Conheça os caminhos pelos quais acolhemos, cuidamos
+				e caminhamos com as pessoas ao nosso redor.
+			</p>
+		</div>
 	</div>
 </section>

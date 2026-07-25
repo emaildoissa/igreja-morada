@@ -15,84 +15,77 @@ const usefulLinks = [
 ];
 ---
 
-<footer class="w-full bg-on-background">
+<footer class="w-full bg-[#2c2a24]">
 	<div
-		class="mx-auto grid max-w-container-max grid-cols-1 gap-stack-lg px-gutter py-section-padding-v md:grid-cols-3"
+		class="mx-auto grid max-w-container-max grid-cols-1 gap-8 px-gutter py-section-padding-v md:grid-cols-3"
 	>
-		<!-- Brand + contact -->
-		<div class="flex flex-col gap-stack-md">
-			<div class="mb-4 flex items-center gap-3">
+		<div class="flex flex-col gap-4">
+			<div class="flex items-center gap-3">
 				<img
 					src="/logo.jpg"
 					alt="Logo Igreja Morada"
 					width="40"
 					height="40"
-					class="h-10 w-10 rounded-full object-cover ring-1 ring-white/10"
+					class="h-10 w-10 rounded-full object-cover ring-2 ring-accent/20"
 				/>
-				<span class="font-display text-[28px] leading-9 text-primary-fixed md:text-[32px] md:leading-10">
+				<span class="font-display text-[28px] leading-9 text-accent md:text-[32px] md:leading-10">
 					Morada
 				</span>
 			</div>
-			<p class="font-body text-base leading-6 text-surface-variant opacity-80">
+			<p class="font-body text-base leading-6 text-surface-variant/70">
 				Uma igreja onde você encontra lar, fé e propósito.
 			</p>
-			<div class="mt-4 font-body text-base leading-6 text-surface-variant opacity-80">
+			<div class="font-body text-base leading-6 text-surface-variant/70">
 				<p>Venha nos visitar</p>
 				<p>Domingos às 9h e 11h</p>
-				<p class="mt-2 font-bold">contato@igrejamorada.org</p>
+				<p class="mt-2 font-semibold text-accent-soft">contato@igrejamorada.org</p>
 			</div>
 		</div>
 
-		<!-- Link columns -->
-		<div class="grid grid-cols-2 gap-gutter">
-			<div class="flex flex-col gap-stack-sm">
-				<h4 class="mb-2 font-body text-base font-semibold leading-6 text-primary-fixed">
+		<div class="grid grid-cols-2 gap-6">
+			<div class="flex flex-col gap-2">
+				<h4 class="mb-1 font-body text-sm font-semibold leading-5 text-accent-soft">
 					Encontros
 				</h4>
-				{
-					gatherings.map((link) => (
-						<a
-							href={link.href}
-							class="font-body text-base leading-6 text-surface-variant opacity-80 transition-all hover:text-primary-fixed-dim hover:opacity-100"
-						>
-							{link.label}
-						</a>
-					))
-				}
+				{gatherings.map((link) => (
+					<a
+						href={link.href}
+						class="font-body text-sm leading-5 text-surface-variant/60 transition-all duration-200 hover:text-accent py-2.5 md:py-0"
+					>
+						{link.label}
+					</a>
+				))}
 			</div>
-			<div class="flex flex-col gap-stack-sm">
-				<h4 class="mb-2 font-body text-base font-semibold leading-6 text-primary-fixed">
+			<div class="flex flex-col gap-2">
+				<h4 class="mb-1 font-body text-sm font-semibold leading-5 text-accent-soft">
 					Links Úteis
 				</h4>
-				{
-					usefulLinks.map((link) => (
-						<a
-							href={link.href}
-							class="font-body text-base leading-6 text-surface-variant opacity-80 transition-all hover:text-primary-fixed-dim hover:opacity-100"
-						>
-							{link.label}
-						</a>
-					))
-				}
+				{usefulLinks.map((link) => (
+					<a
+						href={link.href}
+						class="font-body text-sm leading-5 text-surface-variant/60 transition-all duration-200 hover:text-accent py-2.5 md:py-0"
+					>
+						{link.label}
+					</a>
+				))}
 			</div>
 		</div>
 
-		<!-- CTA -->
-		<div class="flex flex-col items-start gap-stack-md text-left md:items-end md:text-right">
-			<h3 class="mb-2 font-display text-[28px] leading-9 text-primary-fixed md:text-[32px] md:leading-10">
+		<div class="flex flex-col items-start gap-4 text-left md:items-end md:text-right">
+			<h3 class="font-display text-[26px] leading-8 text-accent-soft md:text-[30px] md:leading-9">
 				Veja o que Deus pode fazer através de você.
 			</h3>
 			<a
 				href="/#contribuir"
-				class="mt-2 inline-flex items-center justify-center rounded bg-primary-container px-6 py-3 font-body text-base font-semibold uppercase text-surface-container-lowest transition-colors duration-200 hover:bg-primary"
+				class="inline-flex items-center justify-center rounded-xl bg-accent px-6 py-3 font-body text-sm font-semibold uppercase text-white shadow-sm transition-all duration-300 hover:bg-accent-hover hover:shadow-md active:scale-[0.97]"
 			>
 				Contribuir
 			</a>
 		</div>
 	</div>
 
-	<div class="border-t border-surface-variant/20 bg-inverse-surface py-4 text-center">
-		<p class="font-body text-xs leading-4 text-surface-variant opacity-60">
+	<div class="border-t border-surface-variant/10 py-5 text-center">
+		<p class="font-body text-xs leading-4 text-surface-variant/40">
 			© {year} Igreja Morada. Todos os direitos reservados.
 		</p>
 	</div>

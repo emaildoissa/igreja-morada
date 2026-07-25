@@ -22,11 +22,21 @@ const {
 		<meta name="generator" content={Astro.generator} />
 		<meta name="description" content={description} />
 		<title>{title}</title>
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://igrejamorada.org" />
+		<meta property="og:image" content="https://igrejamorada.org/logo.jpg" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content="https://igrejamorada.org/logo.jpg" />
+
 
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
-			href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Jost:wght@400;600;700&display=swap"
+			href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700&family=Sora:wght@400;600;700&display=swap"
 			rel="stylesheet"
 		/>
 		<link
@@ -34,7 +44,60 @@ const {
 			rel="stylesheet"
 		/>
 	</head>
-	<body class="flex min-h-screen flex-col bg-background text-on-background font-body selection:bg-primary-container selection:text-white">
+	<body class="flex min-h-screen flex-col bg-background text-on-background font-body selection:bg-accent selection:text-white overflow-x-hidden">
+		<div class="noise-overlay" aria-hidden="true"></div>
 		<slot />
 	</body>
 </html>
+
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		// Scroll reveal
+		const revealEls = document.querySelectorAll('.reveal');
+		if (revealEls.length) {
+			const observer = new IntersectionObserver(
+				(entries) => {
+					entries.forEach((entry) => {
+						if (entry.isIntersecting) {
+							entry.target.classList.add('visible');
+							observer.unobserve(entry.target);
+						}
+					});
+				},
+				{ threshold: 0.15, rootMargin: '0px 0px -40px 0px' }
+			);
+			revealEls.forEach((el) => observer.observe(el));
+		}
+
+		// Header shrink on scroll
+		let header = document.querySelector('header');
+		if (header) {
+			const headerInner = header.querySelector('div');
+			const logo = header.querySelector('img');
+			const brand = header.querySelector('span.font-display');
+			let lastScroll = 0;
+
+			window.addEventListener('scroll', () => {
+				const scrollY = window.scrollY;
+				if (scrollY > 80) {
+					header.classList.add('shadow-md');
+					headerInner?.classList.add('h-16');
+					headerInner?.classList.remove('h-18');
+					logo?.classList.add('h-10', 'w-10');
+					logo?.classList.remove('h-12', 'w-12');
+					brand?.classList.add('text-2xl', 'md:text-2xl');
+					brand?.classList.remove('md:text-[28px]', 'md:leading-9', 'text-2xl');
+				} else {
+					header.classList.remove('shadow-md');
+					headerInner?.classList.remove('h-16');
+					headerInner?.classList.add('h-18');
+					logo?.classList.remove('h-10', 'w-10');
+					logo?.classList.add('h-12', 'w-12');
+					brand?.classList.remove('text-2xl', 'md:text-2xl');
+					brand?.classList.add('md:text-[28px]', 'md:leading-9', 'text-2xl');
+				}
+				lastScroll = scrollY;
+			}, { passive: true });
+		}
+	});
+</script>

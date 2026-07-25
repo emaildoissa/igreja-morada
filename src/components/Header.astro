@@ -14,26 +14,26 @@ const navLinks = [
 ];
 ---
 
-<header class="sticky top-0 z-50 w-full bg-surface shadow-sm">
-	<div class="mx-auto flex h-20 w-full max-w-container-max items-center justify-between px-gutter">
+<header class="sticky top-0 z-50 w-full bg-surface/80 backdrop-blur-lg shadow-sm">
+	<div class="mx-auto flex h-18 w-full max-w-container-max items-center justify-between px-gutter">
 		<a
 			href="/"
-			class="flex items-center gap-3 rounded focus:outline-none focus:ring-2 focus:ring-primary"
+			class="flex items-center gap-3 rounded focus:outline-none focus:ring-2 focus:ring-accent"
 			aria-label="Igreja Morada — início"
 		>
 			<img
 				src="/logo.jpg"
 				alt="Logo Igreja Morada"
-				width="44"
-				height="44"
-				class="h-11 w-11 rounded-full object-cover shadow-sm ring-1 ring-primary/10"
+				width="48"
+				height="48"
+				class="h-12 w-12 rounded-full object-cover shadow-sm ring-2 ring-accent/20"
 			/>
-			<span class="font-display text-2xl leading-none text-primary transition-colors duration-200 hover:text-primary-container md:text-[32px] md:leading-10">
+			<span class="font-display text-2xl leading-none text-accent transition-colors duration-200 hover:text-accent-hover md:text-[28px] md:leading-9">
 				Morada
 			</span>
 		</a>
 
-		<nav class="hidden items-center space-x-8 md:flex" aria-label="Principal">
+		<nav class="hidden items-center gap-1 md:flex" aria-label="Principal">
 			{
 				navLinks.map((link) => {
 					const isActive = link.id === active;
@@ -42,13 +42,19 @@ const navLinks = [
 							href={link.href}
 							aria-current={isActive ? 'page' : undefined}
 							class:list={[
-								'font-body text-base font-semibold leading-6 scale-95 transition-all duration-200 active:scale-90',
+								'group relative px-4 py-2 font-body text-sm font-semibold leading-6 transition-colors duration-200',
 								isActive
-									? 'border-b-2 border-primary pb-1 text-primary'
-									: 'text-secondary hover:text-primary',
+									? 'text-accent'
+									: 'text-secondary hover:text-accent',
 							]}
 						>
 							{link.label}
+							<span
+								class:list={[
+									'absolute bottom-0 left-1/2 h-0.5 -translate-x-1/2 bg-accent transition-all duration-300',
+									isActive ? 'w-3/4' : 'w-0 group-hover:w-3/4',
+								]}
+							/>
 						</a>
 					);
 				})
@@ -57,7 +63,7 @@ const navLinks = [
 
 		<a
 			href="/#contribuir"
-			class="hidden items-center justify-center rounded bg-primary-container px-6 py-2.5 font-body text-base font-semibold uppercase tracking-wide text-white shadow-sm transition-all duration-300 hover:bg-primary hover:shadow-md focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 md:inline-flex"
+			class="hidden items-center justify-center rounded bg-accent px-6 py-2.5 font-body text-sm font-semibold uppercase tracking-wide text-white shadow-sm transition-all duration-300 hover:bg-accent-hover hover:shadow-md focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 md:inline-flex"
 		>
 			Contribuir
 		</a>
@@ -65,19 +71,19 @@ const navLinks = [
 		<button
 			id="menu-toggle"
 			type="button"
-			class="rounded p-2 text-primary focus:outline-none focus:ring-2 focus:ring-primary md:hidden"
+			class="rounded p-2 text-accent focus:outline-none focus:ring-2 focus:ring-accent md:hidden"
 			aria-expanded="false"
 			aria-controls="mobile-menu"
 			aria-label="Abrir menu"
 		>
 			<span class="material-symbols-outlined" data-icon-open>menu</span>
-			<span class="material-symbols-outlined hidden" data-icon-close>close</span>
+			<span class="material-symbols-outlined" data-icon-close style="display:none">close</span>
 		</button>
 	</div>
 
 	<nav
 		id="mobile-menu"
-		class="hidden border-t border-surface-variant bg-surface px-gutter py-4 md:hidden"
+		class="hidden relative z-50 border-t border-surface-variant bg-surface/95 backdrop-blur-lg px-gutter py-4 md:hidden"
 		aria-label="Mobile"
 	>
 		<ul class="flex flex-col gap-1">
@@ -90,10 +96,10 @@ const navLinks = [
 								href={link.href}
 								aria-current={isActive ? 'page' : undefined}
 								class:list={[
-									'block rounded px-3 py-3 font-body text-base font-semibold transition-colors',
+									'block rounded px-4 py-3 font-body text-base font-semibold transition-colors duration-200',
 									isActive
-										? 'bg-secondary-fixed text-primary'
-										: 'text-secondary hover:bg-surface-container-low hover:text-primary',
+										? 'bg-accent/10 text-accent'
+										: 'text-secondary hover:bg-accent/5 hover:text-accent',
 								]}
 							>
 								{link.label}
@@ -105,13 +111,14 @@ const navLinks = [
 			<li class="pt-2">
 				<a
 					href="/#contribuir"
-					class="flex w-full items-center justify-center rounded bg-primary-container px-6 py-3 font-body text-base font-semibold uppercase tracking-wide text-white transition-colors hover:bg-primary"
+					class="flex w-full items-center justify-center rounded bg-accent px-6 py-3 font-body text-sm font-semibold uppercase tracking-wide text-white transition-colors hover:bg-accent-hover"
 				>
 					Contribuir
 				</a>
 			</li>
 		</ul>
 	</nav>
+	<div id="menu-overlay" class="fixed inset-0 z-40 bg-black/40 backdrop-blur-sm hidden md:hidden" aria-hidden="true"></div>
 </header>
 
 <script>
@@ -119,11 +126,22 @@ const navLinks = [
 	const menu = document.getElementById('mobile-menu');
 	const iconOpen = toggle?.querySelector('[data-icon-open]');
 	const iconClose = toggle?.querySelector('[data-icon-close]');
+	const overlay = document.getElementById('menu-overlay');
 
 	function setOpen(open: boolean) {
-		menu?.classList.toggle('hidden', !open);
-		iconOpen?.classList.toggle('hidden', open);
-		iconClose?.classList.toggle('hidden', !open);
+		if (open) {
+			menu?.classList.remove('hidden');
+			overlay?.classList.remove('hidden');
+			requestAnimationFrame(() => {
+				menu?.classList.add('animate-fade-in');
+			});
+		} else {
+			menu?.classList.add('hidden');
+			menu?.classList.remove('animate-fade-in');
+			overlay?.classList.add('hidden');
+		}
+		if (iconOpen) iconOpen.style.display = open ? 'none' : '';
+		if (iconClose) iconClose.style.display = open ? '' : 'none';
 		toggle?.setAttribute('aria-expanded', String(open));
 		toggle?.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
 	}
@@ -133,6 +151,8 @@ const navLinks = [
 		setOpen(!isOpen);
 	});
 
+	overlay?.addEventListener('click', () => setOpen(false));
+	
 	menu?.querySelectorAll('a').forEach((link) => {
 		link.addEventListener('click', () => setOpen(false));
 	});
