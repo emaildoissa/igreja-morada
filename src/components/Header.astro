@@ -1,16 +1,24 @@
 ---
 interface Props {
-	active?: 'inicio' | 'sobre' | 'ministerios' | 'contribuir' | 'contato';
+	active?: 'inicio' | 'sobre' | 'ministerios' | 'contribuir' | 'contato' | 'app';
 }
 
 const { active = 'inicio' } = Astro.props;
 
-const navLinks = [
-	{ href: '/', label: 'Início', id: 'inicio' as const },
-	{ href: '/sobre', label: 'Sobre', id: 'sobre' as const },
-	{ href: '/ministerios', label: 'Ministérios', id: 'ministerios' as const },
-	{ href: '/#contribuir', label: 'Contribuir', id: 'contribuir' as const },
-	{ href: '/contato', label: 'Contato', id: 'contato' as const },
+interface NavLink {
+	href: string;
+	label: string;
+	id: 'inicio' | 'sobre' | 'ministerios' | 'contribuir' | 'contato' | 'app';
+	external?: boolean;
+}
+
+const navLinks: NavLink[] = [
+	{ href: '/', label: 'Início', id: 'inicio' },
+	{ href: '/sobre', label: 'Sobre', id: 'sobre' },
+	{ href: '/ministerios', label: 'Ministérios', id: 'ministerios' },
+	{ href: '/#contribuir', label: 'Contribuir', id: 'contribuir' },
+	{ href: '/contato', label: 'Contato', id: 'contato' },
+	{ href: 'https://caixa-igreja-flame.vercel.app/', label: 'Acesso', id: 'app', external: true },
 ];
 ---
 
@@ -40,15 +48,22 @@ const navLinks = [
 					return (
 						<a
 							href={link.href}
+							target={link.external ? '_blank' : undefined}
+							rel={link.external ? 'noopener noreferrer' : undefined}
 							aria-current={isActive ? 'page' : undefined}
 							class:list={[
-								'group relative px-4 py-2 font-body text-sm font-semibold leading-6 transition-colors duration-200',
+								'group relative inline-flex items-center gap-1 px-4 py-2 font-body text-sm font-semibold leading-6 transition-colors duration-200',
 								isActive
 									? 'text-accent'
 									: 'text-secondary hover:text-accent',
 							]}
 						>
-							{link.label}
+							<span>{link.label}</span>
+							{link.external && (
+								<span class="material-symbols-outlined text-[16px] leading-none opacity-70 group-hover:opacity-100">
+									open_in_new
+								</span>
+							)}
 							<span
 								class:list={[
 									'absolute bottom-0 left-1/2 h-0.5 -translate-x-1/2 bg-accent transition-all duration-300',
@@ -94,15 +109,22 @@ const navLinks = [
 						<li>
 							<a
 								href={link.href}
+								target={link.external ? '_blank' : undefined}
+								rel={link.external ? 'noopener noreferrer' : undefined}
 								aria-current={isActive ? 'page' : undefined}
 								class:list={[
-									'block rounded px-4 py-3 font-body text-base font-semibold transition-colors duration-200',
+									'flex items-center justify-between rounded px-4 py-3 font-body text-base font-semibold transition-colors duration-200',
 									isActive
 										? 'bg-accent/10 text-accent'
 										: 'text-secondary hover:bg-accent/5 hover:text-accent',
 								]}
 							>
-								{link.label}
+								<span>{link.label}</span>
+								{link.external && (
+									<span class="material-symbols-outlined text-[18px] opacity-70">
+										open_in_new
+									</span>
+								)}
 							</a>
 						</li>
 					);

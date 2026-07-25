@@ -11,7 +11,7 @@ const usefulLinks = [
 	{ href: '/sobre', label: 'Sobre Nós' },
 	{ href: '/contato', label: 'Contato' },
 	{ href: '/ministerios', label: 'Ministérios' },
-	{ href: '/contato', label: 'Voluntariado' },
+	{ href: 'https://caixa-igreja-flame.vercel.app/', label: 'Acesso', external: true },
 ];
 ---
 
@@ -63,9 +63,16 @@ const usefulLinks = [
 				{usefulLinks.map((link) => (
 					<a
 						href={link.href}
-						class="font-body text-sm leading-5 text-surface-variant/60 transition-all duration-200 hover:text-accent py-2.5 md:py-0"
+						target={link.external ? '_blank' : undefined}
+						rel={link.external ? 'noopener noreferrer' : undefined}
+						class="font-body text-sm leading-5 text-surface-variant/60 transition-all duration-200 hover:text-accent py-2.5 md:py-0 inline-flex items-center gap-1"
 					>
-						{link.label}
+						<span>{link.label}</span>
+						{link.external && (
+							<span class="material-symbols-outlined text-[14px] opacity-70">
+								open_in_new
+							</span>
+						)}
 					</a>
 				))}
 			</div>
