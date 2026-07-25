@@ -75,27 +75,29 @@
 			class="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-accent px-8 py-3.5 font-body text-sm font-semibold uppercase text-white shadow-sm transition-all duration-300 hover:bg-accent-hover hover:shadow-md active:scale-[0.97] disabled:pointer-events-none disabled:opacity-60 md:w-auto"
 		>
 			<span id="btn-text">Enviar Mensagem</span>
-			<span id="btn-spinner" class="hidden material-symbols-outlined animate-spin text-[18px]">progress_activity</span>
+			<span id="btn-spinner" class="hidden h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent"></span>
 		</button>
 	</form>
 </div>
 
 <script>
 	const form = document.getElementById('contact-form') as HTMLFormElement | null;
-	const statusDiv = document.getElementById('form-status');
-	const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement | null;
-	const btnText = document.getElementById('btn-text');
-	const btnSpinner = document.getElementById('btn-spinner');
-
 	const API_URL = 'https://caixa-igreja-flame.vercel.app/api/contato';
 
 	form?.addEventListener('submit', async (e) => {
 		e.preventDefault();
+
+		const statusDiv = document.getElementById('form-status');
+		const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement | null;
+		const btnText = document.getElementById('btn-text');
+		const btnSpinner = document.getElementById('btn-spinner');
+
 		if (!statusDiv || !submitBtn || !btnText || !btnSpinner) return;
 
 		// Reset status
-		statusDiv.className = 'hidden rounded-xl p-4 text-sm font-semibold transition-all duration-300';
-		statusDiv.textContent = '';
+		statusDiv.classList.add('hidden');
+		statusDiv.className = 'hidden rounded-xl p-4 text-sm font-semibold transition-all duration-300 mb-4';
+		statusDiv.innerHTML = '';
 
 		// Loading state
 		submitBtn.disabled = true;
@@ -108,7 +110,6 @@
 			lastName: formData.get('lastName'),
 			email: formData.get('email'),
 			message: formData.get('message'),
-			sentAt: new Date().toISOString(),
 		};
 
 		try {
@@ -120,21 +121,26 @@
 				body: JSON.stringify(payload),
 			});
 
-			if (res.ok) {
-				statusDiv.className = 'block rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 p-4 text-sm font-semibold mb-4 flex items-center gap-2';
-				statusDiv.innerHTML = '<span class="material-symbols-outlined text-emerald-600">check_circle</span> Mensagem enviada com sucesso! Em breve entraremos em contato.';
+			const json = await res.json().catch(() => ({}));
+
+			if (res.ok && json.success) {
+				statusDiv.className = 'block rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 p-4 text-sm font-semibold mb-4 flex items-center gap-2.5';
+				statusDiv.innerHTML = '<svg class="w-5 h-5 text-emerald-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> <span>Mensagem enviada com sucesso! Em breve entraremos em contato.</span>';
+				statusDiv.classList.remove('hidden');
 				form.reset();
 			} else {
-				throw new Error('Servidor retornou erro: ' + res.status);
+				throw new Error(json.error || 'Erro no servidor: ' + res.status);
 			}
-		} catch (err) {
+		} catch (err: any) {
 			console.error('Erro ao enviar formulário:', err);
-			statusDiv.className = 'block rounded-xl bg-rose-50 border border-rose-200 text-rose-800 p-4 text-sm font-semibold mb-4 flex items-center gap-2';
-			statusDiv.innerHTML = '<span class="material-symbols-outlined text-rose-600">error</span> Não foi possível enviar no momento. Por favor, tente novamente mais tarde.';
+			statusDiv.className = 'block rounded-xl bg-rose-50 border border-rose-200 text-rose-800 p-4 text-sm font-semibold mb-4 flex items-center gap-2.5';
+			statusDiv.innerHTML = '<svg class="w-5 h-5 text-rose-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg> <span>Não foi possível enviar a mensagem. Por favor, verifique se a tabela no Supabase foi criada e tente novamente.</span>';
+			statusDiv.classList.remove('hidden');
 		} finally {
 			submitBtn.disabled = false;
 			btnText.textContent = 'Enviar Mensagem';
 			btnSpinner.classList.add('hidden');
+			statusDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 		}
 	});
 </script>
