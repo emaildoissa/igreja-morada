@@ -1,22 +1,25 @@
 ---
 const services = [
 	{
-		icon: 'menu_book',
-		title: 'Cultos Semanais',
-		description: 'Encontros de adoração, palavra e comunhão para toda a família.',
-		image: 'https://images.unsplash.com/photo-1438232992991-995b7058bbb3?auto=format&fit=crop&w=600&q=80',
+		icon: "menu_book",
+		title: "Cultos Semanais",
+		description:
+			"Encontros de adoração, palavra e comunhão para toda a família.",
+		image: "https://images.unsplash.com/photo-1438232992991-995b7058bbb3?auto=format&fit=crop&w=600&q=80",
 	},
 	{
-		icon: 'groups',
-		title: 'Jovens',
-		description: 'Um espaço seguro para crescer na fé, amizades e propósito.',
-		image: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=600&q=80',
+		icon: "groups",
+		title: "Jovens",
+		description:
+			"Um espaço seguro para crescer na fé, amizades e propósito.",
+		image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=600&q=80",
 	},
 	{
-		icon: 'child_care',
-		title: 'Crianças',
-		description: 'Ministério infantil com cuidado, brincadeiras e ensino bíblico.',
-		image: 'https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=600&q=80',
+		icon: "child_care",
+		title: "Crianças",
+		description:
+			"Ministério infantil com cuidado, brincadeiras e ensino bíblico.",
+		image: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=600&q=80",
 	},
 ];
 ---
@@ -25,19 +28,28 @@ const services = [
 	id="ministerios"
 	class="relative overflow-hidden bg-surface px-gutter py-section-padding-v-mobile md:py-section-padding-v"
 >
-	<div class="absolute -left-40 top-1/2 h-80 w-80 rounded-full bg-accent-soft/30 blur-3xl" aria-hidden="true"></div>
+	<div
+		class="absolute -left-40 top-1/2 h-80 w-80 rounded-full bg-accent-soft/30 blur-3xl"
+		aria-hidden="true"
+	>
+	</div>
 
 	<div class="relative mx-auto max-w-container-max">
 		<div class="reveal mx-auto mb-14 max-w-2xl text-center">
-			<span class="mb-2 block font-body text-sm font-bold uppercase tracking-[0.15em] text-accent">
+			<span
+				class="mb-2 block font-body text-sm font-bold uppercase tracking-[0.15em] text-accent"
+			>
 				Nossos Ministérios
 			</span>
-			<h2 class="font-display text-[34px] leading-10 text-on-surface md:text-[40px] md:leading-[48px]">
+			<h2
+				class="font-display text-[34px] leading-10 text-on-surface md:text-[40px] md:leading-[48px]"
+			>
 				Servindo nossa comunidade<br />com amor
 			</h2>
 			<p class="mt-4 font-body text-base leading-6 text-text-muted">
-				Acreditamos que cada pessoa tem um lugar e um chamado. Conheça alguns dos caminhos pelos
-				quais caminhamos juntos como igreja.
+				Somos morada do Senhor, chamados a carregar Sua presença e fazer
+				Jesus conhecido por meio de uma Igreja que ama, cuida e revela
+				Seu coração em tudo o que faz.
 			</p>
 		</div>
 
@@ -46,12 +58,16 @@ const services = [
 				services.map((service, i) => (
 					<article
 						class:list={[
-							'reveal group relative flex flex-col overflow-hidden rounded-2xl bg-surface-container-lowest transition-all duration-500 hover:-translate-y-1',
-							i === 0 ? 'stagger-1' : i === 1 ? 'stagger-2' : 'stagger-3',
+							"reveal group relative flex flex-col overflow-hidden rounded-2xl bg-surface-container-lowest transition-all duration-500 hover:-translate-y-1",
+							i === 0
+								? "stagger-1"
+								: i === 1
+									? "stagger-2"
+									: "stagger-3",
 						]}
 					>
 						<div class="relative h-40 w-full overflow-hidden">
-							<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent z-10"></div>
+							<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent z-10" />
 							<img
 								src={service.image}
 								alt=""
@@ -61,13 +77,20 @@ const services = [
 						</div>
 						<div class="relative z-20 -mt-8 flex flex-col gap-3 p-6 pt-0">
 							<div class="flex h-12 w-12 items-center justify-center rounded-xl bg-accent text-white shadow-md transition-colors group-hover:bg-accent-hover">
-								<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">{service.icon}</span>
+								<span
+									class="material-symbols-outlined"
+									style="font-variation-settings: 'FILL' 1"
+								>
+									{service.icon}
+								</span>
 							</div>
 							<div>
 								<h3 class="font-display text-xl leading-7 text-on-surface">
 									{service.title}
 								</h3>
-								<p class="mt-1.5 font-body text-sm leading-6 text-text-muted">{service.description}</p>
+								<p class="mt-1.5 font-body text-sm leading-6 text-text-muted">
+									{service.description}
+								</p>
 							</div>
 						</div>
 					</article>
