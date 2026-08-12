@@ -1,95 +1,171 @@
 ---
-const mapImage =
-	'https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=900&q=80';
+const address = 'Avenida Principal da Ponta, 707 — Bairro Ponta Grossa';
+const googleMapsUrl = 'https://www.google.com/maps/search/?api=1&query=Avenida+Principal+da+Ponta+707+Ponta+Grossa';
 
-const contactItems = [
-	{
-		icon: 'location_on',
-		title: 'Localização',
-		lines: ['Venha nos visitar', 'Cultos: Domingos às 9h e 11h'],
-	},
-	{
-		icon: 'call',
-		title: 'Telefone',
-		lines: ['(00) 0000-0000'],
-	},
-	{
-		icon: 'schedule',
-		title: 'Horário do Escritório',
-		lines: ['Seg — Qui / 8h – 16h'],
-	},
+const schedules = [
+	{ day: 'Domingos às 19:30', title: 'Culto da Família' },
+	{ day: 'Terças às 20:00', title: 'Culto de Oração' },
+	{ day: 'Sábados às 20:00', title: 'Morada YouTh (Jovens)' },
+	{ day: 'Quintas e Sextas', title: 'Células nos Lares' },
 ];
 
-const socials = [
-	{ icon: 'share', label: 'Redes sociais', href: '#' },
-	{ icon: 'public', label: 'Site', href: '/' },
-	{ icon: 'mail', label: 'E-mail', href: 'mailto:contato@igrejamorada.org' },
+const infoContacts = [
+	{ name: 'Natã', phone: '(51) 98492-5682', cleanPhone: '5551984925682' },
+	{ name: 'Tifani', phone: '(51) 98185-3338', cleanPhone: '5551981853338' },
+];
+
+const pastoralContacts = [
+	{ name: 'Pastora Glaci', phone: '(51) 98450-7678', cleanPhone: '5551984507678', role: 'Aconselhamento e Cuidado' },
+	{ name: 'Pastor Claudiomir', phone: '(51) 98643-7273', cleanPhone: '5551986437273', role: 'Aconselhamento e Cuidado' },
 ];
 ---
 
 <div class="flex flex-col gap-6 md:col-span-5">
-	<div class="rounded-2xl border border-surface-variant bg-surface-white p-8 shadow-sm">
-		<h3 class="mb-6 font-display text-2xl leading-8 text-on-background">
-			Informações de Contato
-		</h3>
-
-		<div class="flex flex-col gap-5">
-			{
-				contactItems.map((item) => (
-					<div class="flex items-start gap-4">
-						<div class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-accent/10 text-accent">
-							<span class="material-symbols-outlined text-[20px]">{item.icon}</span>
-						</div>
-						<div>
-							<h4 class="font-body text-sm font-semibold leading-5 text-on-background">
-								{item.title}
-							</h4>
-							<p class="mt-0.5 font-body text-sm leading-5 text-text-muted">
-								{item.lines.map((line, i) => (
-									<>
-										{i > 0 && <br />}
-										{line}
-									</>
-								))}
-							</p>
-						</div>
-					</div>
-				))
-			}
+	<!-- Localização e Endereço -->
+	<div class="rounded-2xl border border-surface-variant bg-surface-white p-7 shadow-sm">
+		<div class="mb-5 flex items-center gap-3">
+			<div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-accent/10 text-accent">
+				<span class="material-symbols-outlined text-[22px]">location_on</span>
+			</div>
+			<div>
+				<span class="block font-body text-xs font-bold uppercase tracking-wider text-accent">Endereço</span>
+				<h3 class="font-display text-xl leading-6 text-on-background">Onde Estamos</h3>
+			</div>
 		</div>
 
-		<div class="mt-6 flex gap-3 border-t border-surface-variant pt-5">
+		<p class="font-body text-sm leading-relaxed text-on-surface">
+			<strong>Avenida Principal da Ponta, 707</strong><br />
+			Bairro Ponta Grossa
+		</p>
+
+		<a
+			href={googleMapsUrl}
+			target="_blank"
+			rel="noopener noreferrer"
+			class="mt-4 inline-flex items-center gap-2 font-body text-xs font-semibold text-accent transition-colors hover:text-accent-hover"
+		>
+			<span>Abrir rota no Google Maps</span>
+			<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+		</a>
+	</div>
+
+	<!-- Horários dos Encontros -->
+	<div class="rounded-2xl border border-surface-variant bg-surface-white p-7 shadow-sm">
+		<div class="mb-5 flex items-center gap-3">
+			<div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-accent/10 text-accent">
+				<span class="material-symbols-outlined text-[22px]">schedule</span>
+			</div>
+			<div>
+				<span class="block font-body text-xs font-bold uppercase tracking-wider text-accent">Programação</span>
+				<h3 class="font-display text-xl leading-6 text-on-background">Nossos Horários</h3>
+			</div>
+		</div>
+
+		<ul class="flex flex-col gap-3 font-body text-sm">
 			{
-				socials.map((social) => (
+				schedules.map((s) => (
+					<li class="flex items-start justify-between border-b border-surface-dim/60 pb-2.5 last:border-0 last:pb-0">
+						<span class="font-semibold text-on-surface">{s.title}</span>
+						<span class="text-xs font-medium text-accent bg-accent/10 px-2.5 py-1 rounded-full">{s.day}</span>
+					</li>
+				))
+			}
+		</ul>
+	</div>
+
+	<!-- Informações Gerais -->
+	<div class="rounded-2xl border border-surface-variant bg-surface-white p-7 shadow-sm">
+		<div class="mb-5 flex items-center gap-3">
+			<div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-accent/10 text-accent">
+				<span class="material-symbols-outlined text-[22px]">support_agent</span>
+			</div>
+			<div>
+				<span class="block font-body text-xs font-bold uppercase tracking-wider text-accent">Dúvidas & Apoio</span>
+				<h3 class="font-display text-xl leading-6 text-on-background">Informações</h3>
+			</div>
+		</div>
+
+		<div class="flex flex-col gap-3">
+			{
+				infoContacts.map((contact) => (
 					<a
-						href={social.href}
-						aria-label={social.label}
-						class="flex h-10 w-10 items-center justify-center rounded-xl bg-surface-bright text-text-muted transition-all duration-200 hover:bg-accent hover:text-white"
+						href={`https://wa.me/${contact.cleanPhone}`}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="group flex items-center justify-between rounded-xl border border-surface-dim bg-surface-bright p-3.5 transition-all duration-200 hover:border-accent hover:bg-accent/5"
 					>
-						<span class="material-symbols-outlined text-[20px]">{social.icon}</span>
+						<div>
+							<p class="font-body text-sm font-semibold text-on-surface">{contact.name}</p>
+							<p class="font-body text-xs text-text-muted">{contact.phone}</p>
+						</div>
+						<div class="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-600/10 text-emerald-700 transition-colors group-hover:bg-emerald-600 group-hover:text-white">
+							<span class="material-symbols-outlined text-[18px]">chat</span>
+						</div>
 					</a>
 				))
 			}
 		</div>
 	</div>
 
+	<!-- Aconselhamento Pastoral -->
+	<div class="rounded-2xl border border-accent/20 bg-surface-container-low p-7 shadow-sm">
+		<div class="mb-5 flex items-center gap-3">
+			<div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-accent text-white shadow-sm">
+				<span class="material-symbols-outlined text-[22px]">psychology</span>
+			</div>
+			<div>
+				<span class="block font-body text-xs font-bold uppercase tracking-wider text-accent">Cuidado & Oração</span>
+				<h3 class="font-display text-xl leading-6 text-on-background">Aconselhamento</h3>
+			</div>
+		</div>
+
+		<p class="mb-4 font-body text-xs leading-5 text-text-muted">
+			Nossa pastoral está à disposição para orar e caminhar ao seu lado em qualquer momento.
+		</p>
+
+		<div class="flex flex-col gap-3">
+			{
+				pastoralContacts.map((pastor) => (
+					<a
+						href={`https://wa.me/${pastor.cleanPhone}`}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="group flex items-center justify-between rounded-xl border border-surface-variant bg-surface-white p-3.5 transition-all duration-200 hover:border-accent hover:bg-accent/5"
+					>
+						<div>
+							<p class="font-body text-sm font-semibold text-on-surface">{pastor.name}</p>
+							<p class="font-body text-xs text-text-muted">{pastor.phone}</p>
+						</div>
+						<div class="flex h-8 w-8 items-center justify-center rounded-lg bg-accent/10 text-accent transition-colors group-hover:bg-accent group-hover:text-white">
+							<span class="material-symbols-outlined text-[18px]">chat</span>
+						</div>
+					</a>
+				))
+			}
+		</div>
+	</div>
+
+	<!-- Mapa interativo / Link para mapa -->
 	<a
-		href="https://maps.google.com"
+		href={googleMapsUrl}
 		target="_blank"
 		rel="noopener noreferrer"
-		class="group relative h-64 overflow-hidden rounded-2xl border border-surface-variant bg-surface-white shadow-sm"
+		class="group relative h-48 overflow-hidden rounded-2xl border border-surface-variant bg-surface-white shadow-sm"
 	>
 		<img
-			src={mapImage}
-			alt="Mapa com a localização da Igreja Morada"
+			src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=900&q=80"
+			alt="Mapa da região da Igreja Morada - Bairro Ponta Grossa"
 			class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
 			loading="lazy"
 		/>
-		<div class="absolute inset-0 bg-on-background/5 transition-colors duration-500 group-hover:bg-transparent"></div>
-		<div class="absolute bottom-4 left-4 right-4 flex items-center justify-between rounded-xl border border-surface-variant bg-white/90 p-3.5 backdrop-blur-sm">
-			<span class="font-body text-sm font-semibold text-on-background">Ver no Mapa</span>
-			<div class="flex h-8 w-8 items-center justify-center rounded-lg bg-accent/10 text-accent transition-colors group-hover:bg-accent group-hover:text-white">
-				<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+		<div class="absolute inset-0 bg-on-background/10 transition-colors duration-500 group-hover:bg-transparent"></div>
+		<div class="absolute bottom-3 left-3 right-3 flex items-center justify-between rounded-xl border border-surface-variant bg-white/95 p-3 backdrop-blur-sm shadow-sm">
+			<div>
+				<span class="block font-body text-xs font-bold text-on-background">Av. Principal da Ponta, 707</span>
+				<span class="block font-body text-[11px] text-text-muted">Ponta Grossa</span>
+			</div>
+			<div class="flex h-7 w-7 items-center justify-center rounded-lg bg-accent/10 text-accent transition-colors group-hover:bg-accent group-hover:text-white">
+				<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
 			</div>
 		</div>
 	</a>

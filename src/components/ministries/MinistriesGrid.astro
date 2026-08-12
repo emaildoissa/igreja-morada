@@ -2,53 +2,73 @@
 const ministries = [
 	{
 		icon: "church",
-		title: "Cultos",
+		title: "Culto da Família",
+		schedule: "Domingos às 19:30",
 		description:
-			"Um lugar para adorar, ouvir a Palavra, crescer e viver comunhão. Mais do que um culto, um momento para estarmos juntos na presença de Deus.",
+			"Um tempo especial para adorar em família, ouvir a Palavra de Deus e viver comunhão genuína. Um ambiente onde você e seus entes queridos encontram lar e renovo espiritual.",
+		cta: "Como participar",
 		href: "/contato",
 		image: "https://images.unsplash.com/photo-1438232992991-995b7058bbb3?auto=format&fit=crop&w=600&q=80",
 	},
 	{
 		icon: "groups",
-		title: "Jovens",
+		title: "Morada YouTh (Jovens)",
+		schedule: "Sábados às 20:00",
 		description:
-			"Um lugar para construir amizades, fazer perguntas, descobrir quem somos em Deus e crescer juntos na fé e no propósito.",
+			"Jesus no centro, propósito e amizade verdadeira. O Morada YouTh reúne jovens para viver a fé de forma viva e prática, construindo conexões que transformam vidas.",
+		cta: "Conhecer o YouTh",
 		href: "/contato",
 		image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=600&q=80",
 	},
 	{
-		icon: "child_care",
-		title: "Crianças",
+		icon: "favorite",
+		title: "Culto de Oração",
+		schedule: "Terças às 20:00",
 		description:
-			"Um ambiente seguro e acolhedor, onde cada criança pode conhecer o amor de Deus, aprender Sua Palavra e crescer cercada de cuidado.",
-		cta: "Saiba mais",
+			"Momento reservado para busca, intercessão e clamor coletivo. Acreditamos no poder da oração para transformar corações, famílias e a nossa comunidade.",
+		cta: "Orar conosco",
 		href: "/contato",
-		image: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=600&q=80",
+		image: "https://images.unsplash.com/photo-1490730141103-6cac27aaab94?auto=format&fit=crop&w=600&q=80",
 	},
 	{
-		icon: "event_available",
-		title: "Eventos Especiais",
+		icon: "home",
+		title: "Células nos Lares",
+		schedule: "Quintas e Sextas",
 		description:
-			"De encontros comunitários a celebrações sazonais — momentos pensados para reunir pessoas e celebrar a vida juntos.",
-		cta: "Ver agenda",
+			"A igreja presente nas casas: pequenos grupos de comunhão, estudo da Palavra, cuidado mútuo e amizade profunda no dia a dia da nossa comunidade.",
+		cta: "Encontrar uma célula",
 		href: "/contato",
-		image: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=600&q=80",
+		image: "/fotos/Celulas-nos-Lares.jpeg",
+		imagePosition: "object-[50%_25%]",
 	},
 	{
 		icon: "psychology",
-		title: "Aconselhamento",
+		title: "Aconselhamento Pastoral",
+		schedule: "Agendamento com a Pastoral",
 		description:
-			"Um espaço de escuta, cuidado e direção para caminhar junto em diferentes fases e desafios da vida.",
-		cta: "Pedir apoio",
+			"Ninguém precisa atravessar momentos difíceis sozinho. Atendimento pastoral e oração com a Pastora Glaci (51 98450-7678) e o Pastor Claudiomir (51 98643-7273).",
+		cta: "Falar com pastores",
 		href: "/contato",
 		image: "https://images.unsplash.com/photo-1573497620053-e3e3d6c3e6c3?auto=format&fit=crop&w=600&q=80",
 	},
 	{
+		icon: "child_care",
+		title: "Ministério Infantil (Crianças)",
+		schedule: "Durante os cultos",
+		description:
+			"Um ambiente seguro, alegre e acolhedor onde cada criança aprende a Palavra de Deus de forma dinâmica e cresce cercada de carinho e proteção.",
+		cta: "Saiba mais",
+		href: "/contato",
+		image: "/fotos/kids-morada.jpeg",
+		imagePosition: "object-[50%_30%]",
+	},
+	{
 		icon: "volunteer_activism",
 		title: "Ação Social",
+		schedule: "Projetos e Ações Comunitárias",
 		description:
-			"Cuidamos de pessoas de forma prática, colocando o amor em movimento e servindo nossa comunidade com generosidade e cuidado.",
-		cta: "Como ajudar",
+			"A fé que vivemos alcança o bairro Ponta Grossa. Estendemos a mão a quem precisa com acolhimento, mantimentos e apoio à comunidade.",
+		cta: "Como apoiar",
 		href: "/contato",
 		image: "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=600&q=80",
 	},
@@ -74,25 +94,21 @@ const ministries = [
 			<h2
 				class="font-display text-[28px] leading-9 text-on-surface sm:text-[34px] sm:leading-10 md:text-[40px] md:leading-[48px]"
 			>
-				Há um lugar para você
+				Há um lugar para você na Morada
 			</h2>
 			<p class="mt-4 font-body text-base leading-6 text-text-muted">
-				Somos um só corpo, uma só família, onde cada pessoa tem um lugar
-				e um propósito. Cremos que Deus colocou dons e chamados em cada
-				um para que, juntos, possamos viver aquilo que Ele sonhou e
-				tornar Jesus conhecido através de nós.
+				Somos um só corpo e uma só família no bairro Ponta Grossa. Descubra os nossos encontros semanais,
+				células nos lares e ministérios onde você pode crescer, servir e viver o propósito de Deus.
 			</p>
 		</div>
 
 		<div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
 			{
 				ministries.map((item, i) => {
-					const isLarge = i === 0 || i === 3;
 					return (
 						<article
 							class:list={[
 								"reveal group relative col-span-1 flex h-full flex-col overflow-hidden rounded-2xl bg-surface-container-lowest shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-lg",
-								isLarge ? "md:col-span-2 lg:col-span-1" : "",
 								i === 0
 									? "stagger-1"
 									: i === 1
@@ -101,24 +117,30 @@ const ministries = [
 											? "stagger-3"
 											: i === 3
 												? "stagger-4"
-												: i === 4
-													? "stagger-5"
-													: "stagger-5",
+												: "stagger-5",
 							]}
 						>
 							<div class="relative h-36 w-full overflow-hidden">
 								<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/70 via-transparent to-transparent z-10" />
 								<img
 									src={item.image}
-									alt=""
-									class="h-full w-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:saturate-[1.1]"
+									alt={item.title}
+									class:list={[
+										"h-full w-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:saturate-[1.1]",
+										item.imagePosition || "object-center",
+									]}
 									loading="lazy"
 								/>
+								{item.schedule && (
+									<span class="absolute top-3 right-3 z-20 rounded-full bg-[#2c2a24]/85 px-3 py-1 font-body text-xs font-semibold text-accent-soft backdrop-blur-sm shadow-sm">
+										{item.schedule}
+									</span>
+								)}
 							</div>
-							<div class="relative z-20 -mt-8 flex flex-col gap-3 p-5 pt-0">
+							<div class="relative z-20 -mt-8 flex flex-col gap-3 p-5 pt-0 flex-grow">
 								<div class="flex h-11 w-11 items-center justify-center rounded-xl bg-accent text-white shadow-md transition-transform duration-300 group-hover:scale-110">
 									<span
-										class="material-symbols-outlined"
+										class="material-symbols-outlined text-[22px]"
 										style="font-variation-settings: 'FILL' 1"
 									>
 										{item.icon}
@@ -130,15 +152,17 @@ const ministries = [
 								<p class="flex-grow font-body text-sm leading-6 text-text-muted">
 									{item.description}
 								</p>
-								<a
-									href={item.href}
-									class="mt-2 inline-flex w-fit items-center gap-2 font-body text-sm font-semibold text-accent transition-all duration-300 hover:text-accent-hover"
-								>
-									{item.cta}
-									<span class="material-symbols-outlined text-[16px] transition-transform duration-300 group-hover:translate-x-1">
-										arrow_forward
-									</span>
-								</a>
+								<div class="pt-2 border-t border-surface-variant/40 mt-auto">
+									<a
+										href={item.href}
+										class="inline-flex w-fit items-center gap-2 font-body text-sm font-semibold text-accent transition-all duration-300 hover:text-accent-hover"
+									>
+										<span>{item.cta || "Saiba mais"}</span>
+										<span class="material-symbols-outlined text-[16px] transition-transform duration-300 group-hover:translate-x-1">
+											arrow_forward
+										</span>
+									</a>
+								</div>
 							</div>
 						</article>
 					);

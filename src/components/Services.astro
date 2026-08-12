@@ -1,25 +1,37 @@
 ---
 const services = [
 	{
-		icon: "menu_book",
-		title: "Cultos Semanais",
+		icon: "church",
+		title: "Culto da Família",
+		schedule: "Domingos às 19:30",
 		description:
-			"Encontros de adoração, palavra e comunhão para toda a família.",
+			"Encontros de adoração, Palavra viva e comunhão para edificar você e sua família.",
 		image: "https://images.unsplash.com/photo-1438232992991-995b7058bbb3?auto=format&fit=crop&w=600&q=80",
 	},
 	{
-		icon: "groups",
-		title: "Jovens",
+		icon: "favorite",
+		title: "Culto de Oração",
+		schedule: "Terças às 20:00",
 		description:
-			"Um espaço seguro para crescer na fé, amizades e propósito.",
+			"Um tempo precioso de clamor, busca da presença do Espírito Santo e intercessão.",
+		image: "https://images.unsplash.com/photo-1490730141103-6cac27aaab94?auto=format&fit=crop&w=600&q=80",
+	},
+	{
+		icon: "groups",
+		title: "Morada YouTh (Jovens)",
+		schedule: "Sábados às 20:00",
+		description:
+			"Comunidade jovem com Jesus no centro, amizades sinceras e impacto real.",
 		image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=600&q=80",
 	},
 	{
-		icon: "child_care",
-		title: "Crianças",
+		icon: "home",
+		title: "Células nos Lares",
+		schedule: "Quintas e Sextas",
 		description:
-			"Ministério infantil com cuidado, brincadeiras e ensino bíblico.",
-		image: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=600&q=80",
+			"Pequenos grupos reunidos nas casas para compartilhar a vida, estudo bíblico e cuidado.",
+		image: "/fotos/Celulas-nos-Lares.jpeg",
+		imagePosition: "object-[50%_25%]",
 	},
 ];
 ---
@@ -39,56 +51,63 @@ const services = [
 			<span
 				class="mb-2 block font-body text-sm font-bold uppercase tracking-[0.15em] text-accent"
 			>
-				Nossos Ministérios
+				Nossa Programação
 			</span>
 			<h2
 				class="font-display text-[34px] leading-10 text-on-surface md:text-[40px] md:leading-[48px]"
 			>
-				Servindo nossa comunidade<br />com amor
+				Encontros & Ministérios
 			</h2>
 			<p class="mt-4 font-body text-base leading-6 text-text-muted">
-				Somos morada do Senhor, chamados a carregar Sua presença e fazer
-				Jesus conhecido por meio de uma Igreja que ama, cuida e revela
-				Seu coração em tudo o que faz.
+				Somos morada do Senhor na Ponta Grossa. Venha participar dos nossos cultos semanais
+				e fazer parte de uma comunidade que ama, cuida e revela o coração de Jesus.
 			</p>
 		</div>
 
-		<div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+		<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
 			{
 				services.map((service, i) => (
 					<article
 						class:list={[
-							"reveal group relative flex flex-col overflow-hidden rounded-2xl bg-surface-container-lowest transition-all duration-500 hover:-translate-y-1",
+							"reveal group relative flex flex-col overflow-hidden rounded-2xl bg-surface-container-lowest transition-all duration-500 hover:-translate-y-1 hover:shadow-md",
 							i === 0
 								? "stagger-1"
 								: i === 1
 									? "stagger-2"
-									: "stagger-3",
+									: i === 2
+										? "stagger-3"
+										: "stagger-4",
 						]}
 					>
 						<div class="relative h-40 w-full overflow-hidden">
 							<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent z-10" />
 							<img
 								src={service.image}
-								alt=""
-								class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+								alt={service.title}
+								class:list={[
+									"h-full w-full object-cover transition-transform duration-700 group-hover:scale-110",
+									service.imagePosition || "object-center",
+								]}
 								loading="lazy"
 							/>
+							<span class="absolute top-3 right-3 z-20 rounded-full bg-[#2c2a24]/85 px-2.5 py-0.5 font-body text-[11px] font-semibold text-accent-soft backdrop-blur-sm shadow-sm">
+								{service.schedule}
+							</span>
 						</div>
-						<div class="relative z-20 -mt-8 flex flex-col gap-3 p-6 pt-0">
-							<div class="flex h-12 w-12 items-center justify-center rounded-xl bg-accent text-white shadow-md transition-colors group-hover:bg-accent-hover">
+						<div class="relative z-20 -mt-8 flex flex-col gap-3 p-5 pt-0 flex-grow">
+							<div class="flex h-11 w-11 items-center justify-center rounded-xl bg-accent text-white shadow-md transition-colors group-hover:bg-accent-hover">
 								<span
-									class="material-symbols-outlined"
+									class="material-symbols-outlined text-[22px]"
 									style="font-variation-settings: 'FILL' 1"
 								>
 									{service.icon}
 								</span>
 							</div>
 							<div>
-								<h3 class="font-display text-xl leading-7 text-on-surface">
+								<h3 class="font-display text-lg leading-6 text-on-surface">
 									{service.title}
 								</h3>
-								<p class="mt-1.5 font-body text-sm leading-6 text-text-muted">
+								<p class="mt-1.5 font-body text-xs leading-5 text-text-muted">
 									{service.description}
 								</p>
 							</div>

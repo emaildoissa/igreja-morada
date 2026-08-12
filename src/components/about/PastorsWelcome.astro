@@ -1,6 +1,11 @@
 ---
 const pastorImage =
 	'https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=900&q=80';
+
+const pastors = [
+	{ name: 'Pastora Glaci', phone: '(51) 98450-7678', cleanPhone: '5551984507678' },
+	{ name: 'Pastor Claudiomir', phone: '(51) 98643-7273', cleanPhone: '5551986437273' },
+];
 ---
 
 <section class="relative overflow-hidden bg-surface-container-lowest px-gutter py-section-padding-v-mobile md:py-section-padding-v">
@@ -12,18 +17,18 @@ const pastorImage =
 				<div class="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-lg">
 					<img
 						src={pastorImage}
-						alt="Liderança pastoral da Igreja Morada"
+						alt="Liderança pastoral da Igreja Morada — Pastora Glaci e Pastor Claudiomir"
 						class="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
 						loading="lazy"
 					/>
-					<div class="absolute inset-0 bg-gradient-to-t from-[#2c2a24]/40 to-transparent"></div>
+					<div class="absolute inset-0 bg-gradient-to-t from-[#2c2a24]/60 via-transparent to-transparent"></div>
 					<div class="absolute bottom-0 left-0 right-0 p-5">
-						<div class="rounded-xl bg-white/90 backdrop-blur-sm px-4 py-3">
-							<h3 class="font-body text-sm font-semibold leading-5 text-on-surface">
-								Nossa Pastoral
+						<div class="rounded-xl bg-white/95 backdrop-blur-sm px-4 py-3 shadow-md">
+							<h3 class="font-body text-sm font-bold leading-5 text-on-surface">
+								Pastora Glaci & Pastor Claudiomir
 							</h3>
-							<p class="font-body text-xs leading-4 text-text-muted">
-								Liderança da Igreja Morada
+							<p class="font-body text-xs leading-4 text-accent font-semibold">
+								Pastores da Igreja Morada
 							</p>
 						</div>
 					</div>
@@ -35,25 +40,49 @@ const pastorImage =
 
 		<div class="reveal stagger-1 flex flex-col gap-5 lg:col-span-6 lg:col-start-7">
 			<span class="font-body text-sm font-bold uppercase tracking-[0.15em] text-accent">
-				A Igreja
+				Liderança Pastoral
 			</span>
 			<h2 class="font-display text-[32px] leading-10 text-on-background md:text-[38px] md:leading-[46px]">
-				Somos uma igreja que crê em Jesus e ama a Deus e as pessoas
+				Cuidar, acolher e conduzir pessoas ao coração de Jesus
 			</h2>
 			<div class="flex flex-col gap-4 font-body text-base leading-6 text-text-muted">
 				<p>
-					A Igreja Morada nasceu do desejo de criar um lar espiritual — um lugar onde cada pessoa
-					seja vista, acolhida e encorajada a crescer na fé.
+					A Igreja Morada nasceu com a missão de ser um lar espiritual no bairro Ponta Grossa — 
+					um lugar onde cada pessoa é vista, amada e encorajada a viver plenamente o plano de Deus.
 				</p>
 				<p>
-					Acreditamos que a igreja é mais do que um encontro de domingo: é família, missão e
-					cuidado mútuo. Seja bem-vindo para caminhar conosco, servir com seus dons e descobrir o
-					propósito que Deus tem para a sua vida.
+					Sob a liderança da <strong>Pastora Glaci</strong> e do <strong>Pastor Claudiomir</strong>, 
+					nossa comunidade preza pela comunhão nos lares através das células, pelo fortalecimento das 
+					famílias e pelo acompanhamento pastoral atento a cada estação da vida.
 				</p>
 			</div>
-			<div class="mt-4">
-				<p class="font-display text-3xl italic leading-none text-accent" aria-label="Assinatura da pastoral">
-					Com carinho, a família Morada
+
+			<!-- Aconselhamento e Contato com os Pastores -->
+			<div class="mt-2 rounded-2xl border border-accent/20 bg-surface-container-low p-5">
+				<h4 class="font-display text-base font-semibold text-on-surface mb-2">
+					Precisa de aconselhamento ou oração?
+				</h4>
+				<p class="font-body text-xs text-text-muted mb-4">
+					Nossos pastores estão disponíveis para conversar, ouvir e interceder por você e sua família:
+				</p>
+				<div class="flex flex-wrap gap-3">
+					{pastors.map((pastor) => (
+						<a
+							href={`https://wa.me/${pastor.cleanPhone}`}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="inline-flex items-center gap-2 rounded-xl bg-accent px-4 py-2.5 font-body text-xs font-semibold text-white shadow-sm transition-all hover:bg-accent-hover hover:shadow-md"
+						>
+							<span class="material-symbols-outlined text-[16px]">chat</span>
+							<span>Falar com {pastor.name}</span>
+						</a>
+					))}
+				</div>
+			</div>
+
+			<div class="mt-2">
+				<p class="font-display text-2xl italic leading-none text-accent" aria-label="Assinatura da pastoral">
+					Pr. Claudiomir & Pra. Glaci
 				</p>
 			</div>
 		</div>
