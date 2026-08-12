@@ -1,26 +1,121 @@
 ---
-const heroImage =
-	'https://images.unsplash.com/photo-1438032005730-c779502df39b?auto=format&fit=crop&w=1920&q=80';
+const heroImage = "/fotos/nossa-igreja.jpeg";
 ---
 
-<section class="relative flex h-[55vh] min-h-[480px] w-full items-center justify-center overflow-hidden">
-	<div
-		class="absolute inset-0 bg-cover bg-center"
-		style={`background-image: url('${heroImage}')`}
-		role="img"
-		aria-label="Interior acolhedor de igreja durante o culto"
-	/>
-	<div class="absolute inset-0 bg-gradient-to-br from-[#2c2a24]/85 via-[#56533a]/75 to-[#c25b3a]/25"></div>
+<section
+	class="relative flex min-h-[75vh] sm:min-h-[580px] md:min-h-[640px] w-full items-center overflow-hidden py-20 md:py-28"
+>
+	<!-- Background parallax layer com nitidez aprimorada -->
+	<div class="absolute inset-0 z-0" id="about-hero-parallax">
+		<img
+			src={heroImage}
+			alt="Momento de adoração e comunidade na Igreja Morada"
+			class="h-full w-full object-cover object-[center_25%] md:object-[70%_25%] contrast-[1.08] brightness-[1.03]"
+			fetchpriority="high"
+			loading="eager"
+		/>
+		<!-- Gradiente lateral limpo: escurece apenas o lado do texto e deixa a foto 100% nítida e transparente à direita -->
+		<div
+			class="absolute inset-0 bg-gradient-to-r from-[#2c2a24]/95 via-[#2c2a24]/70 via-45% to-transparent"
+		>
+		</div>
+		<!-- Suave transição apenas na base da seção -->
+		<div
+			class="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#2c2a24]/60 to-transparent"
+		>
+		</div>
+	</div>
 
-	<div class="relative z-10 mx-auto max-w-container-max px-gutter">
+	<!-- Efeito de brilho ambiente orgânico -->
+	<div
+		class="bg-organic-blob absolute -bottom-16 -right-16 h-80 w-80 bg-accent/25"
+		aria-hidden="true"
+	>
+	</div>
+	<div
+		class="bg-organic-blob absolute -top-16 -left-16 h-80 w-80 bg-accent-soft/15"
+		aria-hidden="true"
+	>
+	</div>
+
+	<!-- Conteúdo textual alinhado à esquerda com contraste impecável -->
+	<div class="relative z-10 mx-auto w-full max-w-container-max px-gutter">
 		<div class="max-w-2xl">
-			<h1 class="reveal font-display text-[36px] leading-[44px] text-white text-shadow-soft sm:text-[44px] sm:leading-[52px] md:text-[68px] md:leading-[76px]">
+			<div
+				class="reveal mb-3 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3.5 py-1.5 backdrop-blur-md"
+			>
+				<span
+					class="material-symbols-outlined text-[16px] text-accent-soft"
+					style="font-variation-settings: 'FILL' 1"
+				>
+					church
+				</span>
+				<span
+					class="font-body text-xs font-bold uppercase tracking-[0.15em] text-accent-soft"
+				>
+					Quem Somos
+				</span>
+			</div>
+
+			<h1
+				class="reveal stagger-1 font-display text-[36px] leading-[44px] text-white text-shadow-soft sm:text-[46px] sm:leading-[54px] md:text-[56px] md:leading-[64px] lg:text-[68px] lg:leading-[76px]"
+			>
 				Sobre a Nossa Igreja
 			</h1>
-			<p class="reveal stagger-1 mt-5 max-w-xl font-body text-lg leading-7 text-surface-container-low/90">
-				Somos uma igreja que crê em Jesus e ama a Deus e as pessoas. Conheça nossa missão, nossas
-				crenças e o coração por trás da Igreja Morada.
+
+			<p
+				class="reveal stagger-2 mt-5 max-w-xl font-body text-base sm:text-lg leading-relaxed text-surface-container-low/90"
+			>
+				Somos uma igreja que crê em Jesus e ama a Deus e as pessoas.
+				Conheça nossa missão, nossas crenças e o coração por trás da
+				Igreja Morada.
 			</p>
+
+			<div
+				class="reveal stagger-3 mt-8 flex flex-col gap-4 sm:flex-row sm:items-center"
+			>
+				<a
+					href="#crencas"
+					class="inline-flex items-center justify-center gap-2 rounded-xl bg-accent px-7 py-3.5 font-body text-base font-semibold uppercase text-white shadow-md transition-all duration-300 hover:bg-accent-hover hover:shadow-lg active:scale-[0.97]"
+				>
+					<span>Nossas Crenças</span>
+					<span class="material-symbols-outlined text-[18px]">
+						arrow_downward
+					</span>
+				</a>
+				<a
+					href="/contato"
+					class="inline-flex items-center justify-center gap-2 rounded-xl border border-white/25 bg-black/25 px-6 py-3.5 font-body text-sm font-semibold text-surface-container-low backdrop-blur-sm transition-all duration-300 hover:border-white/40 hover:bg-black/40 hover:text-white"
+				>
+					<span
+						class="material-symbols-outlined text-[18px] text-accent-soft"
+					>
+						location_on
+					</span>
+					<span>Ponta Grossa • Av. Principal, 707</span>
+				</a>
+			</div>
 		</div>
 	</div>
 </section>
+
+<script>
+	document.addEventListener("DOMContentLoaded", () => {
+		if (window.innerWidth < 768) return;
+		const parallax = document.getElementById("about-hero-parallax");
+		if (!parallax) return;
+
+		let ticking = false;
+		window.addEventListener("scroll", () => {
+			if (!ticking) {
+				requestAnimationFrame(() => {
+					const scrolled = window.scrollY;
+					const speed = 0.25;
+					parallax.style.transform = `translateY(${scrolled * speed}px)`;
+					ticking = false;
+				});
+				ticking = true;
+			}
+		});
+	});
+</script>
