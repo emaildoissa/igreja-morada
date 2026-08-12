@@ -4,25 +4,28 @@ const beliefs = [
 		title: "Jesus é Senhor",
 		description:
 			"Jesus é o centro de tudo o que somos e fazemos. Vivemos para conhecê-Lo, segui-Lo e torná-Lo conhecido.",
-		image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80",
-		alt: "Pessoas em adoração durante o culto",
+		image: "/fotos/Jesus-e-Senhor.jpeg",
+		alt: "Pessoas em adoração durante o culto da Igreja Morada",
 		accent: "#c25b3a",
+		imagePosition: "object-[50%_35%]",
 	},
 	{
 		title: "Deus é Amor",
 		description:
 			"O amor de Deus é o que nos une, nos transforma e nos move. Amamos porque fomos amados primeiro.",
-		image: "https://images.unsplash.com/photo-1504052434569-70ad5836ab65?auto=format&fit=crop&w=800&q=80",
-		alt: "Bíblia aberta em momento de devoção",
-		accent: "#e8c9a0",
+		image: "/fotos/Deus-e-amor.jpeg",
+		alt: "Momento de oração, acolhimento e amor fraternal na Igreja Morada",
+		accent: "#c25b3a",
+		imagePosition: "object-[50%_35%]",
 	},
 	{
 		title: "O Espírito Capacita",
 		description:
 			"O Espírito Santo está presente, conduzindo cada passo e despertando em nós aquilo que Deus colocou para viver. Sua presença nos capacita.",
-		image: "https://images.unsplash.com/photo-1490730141103-6cac27aaab94?auto=format&fit=crop&w=800&q=80",
-		alt: "Pessoa em momento de oração e contemplação",
+		image: "/fotos/o-espirito-capacita.jpeg",
+		alt: "Momento de oração e busca do Espírito Santo durante o culto",
 		accent: "#6b7d53",
+		imagePosition: "object-[45%_35%]",
 	},
 ];
 ---
@@ -72,7 +75,10 @@ const beliefs = [
 							<img
 								src={belief.image}
 								alt={belief.alt}
-								class="h-full w-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:saturate-[1.1]"
+								class:list={[
+									"h-full w-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:saturate-[1.1]",
+									belief.imagePosition || "object-center",
+								]}
 								loading="lazy"
 							/>
 						</div>
